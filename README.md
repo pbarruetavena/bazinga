@@ -6,7 +6,7 @@
 ### Integrantes:
 * Pedro Gabriel Barruetavena Vieira
 * Rafael Igor Vilaça
-* Victor Nunes Pando
+* Victor Nunes Pando Ferreira
 
 ### Ideias iniciais
 1. Doofenshmirtz Ltda:
