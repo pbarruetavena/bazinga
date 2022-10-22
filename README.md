@@ -13,3 +13,8 @@
     Um sistema para a Empresa do Malvado Doofenshmirtz, com cadastro de funcionários e de gerenciamento das invenções de Doofenshmirtz.
 2. Jogo de carta: 
     Um jogo de carta de Pedra-Papel-Tesoura-Lagarto-Spock, como descrito por Sheldon em The big bang theory, com algumas adições como um valor numérico para as cartas.
+
+### Tarefas
+- [ ] Criar sistema de login
+
+> Design da página inicial no [Canva](https://www.canva.com/design/DAFPyIK50mc/21EAfrwLht7f9bdi1f4GVg/edit?utm_content=DAFPyIK50mc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
