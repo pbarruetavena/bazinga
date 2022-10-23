@@ -12,7 +12,7 @@
 
 ### Ideia inicial - BAZINGA
 
-    Um jogo de carta de Pedra-Papel-Tesoura-Lagarto-Spock, como descrito por Sheldon em The big bang theory, com algumas adições como um valor numérico para as cartas, que desempataria a rodada. Junto com o jogo, haverá um ranking das maiores pontuações gerais e perfis locais (específicos daquela máquina) usando web-storage.
+Um jogo de carta de Pedra-Papel-Tesoura-Lagarto-Spock, como descrito por Sheldon em The big bang theory, com algumas adições como um valor numérico para as cartas, que desempataria a rodada. Junto com o jogo, haverá um ranking das maiores pontuações gerais e perfis locais (específicos daquela máquina) usando web-storage.
 
 ### Tarefas
 - [x] Criar design da página inicial
