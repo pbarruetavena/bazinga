@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo-foda | Home</title>
+    <title>Bazinga | Início</title>
+    <!-- Biblioteca de ícones em css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header></header>
+
+    <header>
+        <i id="icone-configuracao" class="fa fa-cog" aria-hidden="true"></i>
+        <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i>
+        <article>
+            <h1>BAZINGA!</h1>
+            <h2>Pedra, Papel, Tesoura, Lagarto e Spock</h2>
+        </article>
+    </header>
+
+    <main>
+        <section id="secao-perfil">
+            <img src="imagens/imagem-user.jpg">
+            <div>
+                <p id="nome-perfil">Anônimo</p>
+                <p id="pontuacao-maxima-perfil">0pts</p>
+            </div>
+        </section>
+
+        <section id="opcoes">
+            <button id="jogar"><i class="fa fa-play" aria-hidden="true"></i>Jogar</button>
+            <button id="ranking"><i class="fa fa-trophy" aria-hidden="true"></i>Ranking</button>
+            <button id="ajuda"><i class="fa fa-question" aria-hidden="true"></i>Ajuda</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>"Citação foda"</p>
+    </footer>
 </body>
 </html>

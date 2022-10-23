@@ -1,0 +1,35 @@
+
+body{
+    background-color: #171616;
+    color: white;
+}
+
+#icone-configuracao{
+    float: left;
+}
+#icone-sobre{
+    float: right;
+}
+
+@media (min-width: 530px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 60vw 1fr;
+        grid-template-rows: 3fr 70vh 1fr;
+    }
+
+    header{
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+    }
+
+    main{
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    footer{
+        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+    }
+}
