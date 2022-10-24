@@ -1,7 +1,15 @@
+/* 
+ *                  FONTES - Google font
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');                      /*  título  */
+ @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');                             /*  usuário  */
+ @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital@1&display=swap');
+
 
 body{
     background-color: #171616;
     color: white;
+    overflow: hidden;
 }
 
 #icone-configuracao{
@@ -43,11 +51,49 @@ main{
     top: 5px;
 }
 
+#secao-perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+}
+#imagem-user{
+    filter: invert(0.89)
+}
+#secao-perfil{
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+#titulo{
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: auto;
+}
+#titulo h1,
+#titulo h2{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+}
+#titulo h1{
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+}
+footer p{
+    font-family: 'Bona Nova', serif;
+}
+
 @media (min-width: 530px){
     body{
         display: grid;
         grid-template-columns: 1fr 60vw 1fr;
-        grid-template-rows: 25vh 60vh 15vh;
+        grid-template-rows: 30vh 55vh 15vh;
     }
 
     header{
