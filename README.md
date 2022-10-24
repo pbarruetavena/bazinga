@@ -1,5 +1,5 @@
 
-#  TP2 - O retorno (título provisório)
+#  TP2 - BAZINGA - Pedra, papel, tesoura, lagarto e spock
 
     Sim... Ele voltou... O mais temido de todas as edições... o TP... 2
 
