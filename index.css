@@ -29,7 +29,7 @@ main{
     justify-content: center;
     height: 100%;
     width: 30vw;
-    gap: 10%;
+    gap: 9%;
 }
 .botao-opcao{
     height: 50px;
@@ -38,18 +38,11 @@ main{
     color: white;
     border-radius: 10em;
     position: relative;
-    display: grid;
-    grid-template-columns: 15% 1fr;;
 }
 .botao-opcao i{
-    margin-top: 13px;
-    margin-bottom: 13px;
+    font-size: 30px;
 }
-.botao-opcao:hover{
-    background-color: rgba(255, 255, 255, 0.384);
-    left: 5px;
-    top: 5px;
-}
+
 
 #secao-perfil{
     display: flex;
@@ -68,18 +61,24 @@ main{
 #titulo{
     display: block;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 5vw;
     margin-bottom: auto;
+    text-shadow: 5px 5px 6px rgb(91 92 91 / 40%);
 }
 #titulo h1,
 #titulo h2{
     margin-top: auto;
     margin-bottom: auto;
     font-family: 'Poppins', sans-serif;
-    font-size: 50px;
+    font-size: 7vh;
 }
 #titulo h1{
     font-weight: bold;
+}
+#icone-configuracao,
+#icone-sobre{
+    font-size: 5vw;
+    margin: 20px;
 }
 
 footer{
@@ -87,6 +86,35 @@ footer{
 }
 footer p{
     font-family: 'Bona Nova', serif;
+}
+
+/*     FUNCIONALIDADES     */
+
+.botao-opcao:hover{
+    background-color: rgba(255, 255, 255, 0.384);
+    left: 3px;
+    top: 3px;
+    cursor: pointer;
+}
+.botao-opcao.botao-extendido{
+
+}
+.botao-extendido .icone-botao{
+    transition: all 200ms linear;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 10px;
+    position: absolute;
+    transform: translate(-130px, -5px);
+}
+
+#icone-configuracao:hover{
+    transform: rotate(360deg);
+    transition: all 600ms cubic-bezier(0.5, -0.04, 0.25, 1);
+}
+#icone-configuracao:hover,
+#icone-sobre {
+    cursor: pointer;
 }
 
 @media (min-width: 530px){
@@ -115,3 +143,4 @@ footer p{
         grid-column: 1 / 4;
     }
 }
+
