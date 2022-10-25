@@ -25,3 +25,8 @@ for(let i = 0; i < 3; i++){
 for(let i = 0; i < 3; i++){
     botoesOpcaoArr[i].addEventListener('mouseout', escondeTextoBotao);
 }
+
+
+
+document.querySelector('#icone-sobre').addEventListener('click', () => window.location.href = 'sobre-nos.html');
+botoesOpcaoArr[0].addEventListener('click', () => window.location.href = 'jogo/jogo.html');
