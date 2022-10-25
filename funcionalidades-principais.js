@@ -1,8 +1,19 @@
 const botoesOpcaoArr = document.querySelectorAll('.botao-opcao');
 
 
-
 // animação no botão
+
+/*
+
+function sleep(milliseconds) {
+    let timeStart = new Date().getTime();
+    while (true) {
+      let elapsedTime = new Date().getTime() - timeStart;
+      if (elapsedTime > milliseconds) {
+        break;
+      }
+    }
+}
 
 function revelaTextoBotao(e){
     let botao = e.currentTarget;
@@ -11,6 +22,7 @@ function revelaTextoBotao(e){
     paragrafo.innerHTML = botao.dataset.texto;
     botao.classList.add('botao-extendido');
     botao.appendChild(paragrafo);
+    sleep(300);
 }
 function escondeTextoBotao(e){
     let botao = e.currentTarget;
@@ -26,7 +38,7 @@ for(let i = 0; i < 3; i++){
     botoesOpcaoArr[i].addEventListener('mouseout', escondeTextoBotao);
 }
 
-
+*/
 
 document.querySelector('#icone-sobre').addEventListener('click', () => window.location.href = 'sobre-nos.html');
 botoesOpcaoArr[0].addEventListener('click', () => window.location.href = 'jogo/jogo.html');
