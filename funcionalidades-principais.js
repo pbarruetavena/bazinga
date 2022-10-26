@@ -40,5 +40,5 @@ for(let i = 0; i < 3; i++){
 
 */
 
-document.querySelector('#icone-sobre').addEventListener('click', () => window.location.href = 'sobre-nos.html');
+document.querySelector('#icone-sobre').addEventListener('click', () => open('sobre-nos.html', '_blank'));
 botoesOpcaoArr[0].addEventListener('click', () => window.location.href = 'jogo/jogo.html');
