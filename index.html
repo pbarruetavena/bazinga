@@ -8,9 +8,11 @@
     <!-- Biblioteca de ícones em css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="estilos/configuracao.css">
 </head>
 <body>
+    <script src="scripts/configuracoes-previas.js"></script>
 
     <header>
         <i id="icone-configuracao" class="fa fa-cog" aria-hidden="true"></i>
@@ -34,9 +36,61 @@
         </section>
     </main>
 
+    <main id="ranking" class="invisivel"></main>
+
+    <main id="configuracao" class="invisivel">
+
+        <section id="selecao-perfil">
+            <article class="perfil-para-selecao perfil-selecionado">
+                <img class="imagem-usuarios" src="imagens/icone.png">
+                <div class="container-dados-perfil">
+                    <p class="nome-perfil-selecao">Anônimo</p>
+                    <p clas="id-selecao">ID: 0</p>
+                </div>
+                <button class="apagar-perfil"></button>
+            </article>
+
+            <button id="adicionar-perfil"></button>
+        </section>
+
+        <section id="configura-dados">
+
+            <section id="input-img-nome">
+                <img id="imagem-selecionada">
+                <div id="secao-input-salvamento">
+                    <label id="label-nome"><input type="text" id="input-nome" maxlength="12"></label>
+                    <button id="trocar-imagem">p</button>
+                    <button id="salvar">i</button>
+                </div>
+            </section>
+
+            <section id="configura-tema">
+                <div id="selecao-tema">
+
+                    <article class="amostra-tema">
+                        <div class="container-cores">
+                            <div class="display-cor cor1"></div>
+                            <div class="display-cor cor2"></div>
+                        </div>
+                        <button class="apagar-tema"></button>
+                    </article>
+
+                </div>
+
+                <div id="inputs-cores">
+                    <label id="label-cor1"><input type="color" id="cor1"></label>
+                    <label id="label-cor2"><input type="color" id="cor2"></label>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
     <footer>
         <p>"Texto provisório pq ainda n peguei o original"</p>
     </footer>
-    <script src="funcionalidades-principais.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="scripts/funcionalidades-principais.js"></script>
 </body>
 </html>

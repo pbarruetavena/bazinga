@@ -7,6 +7,15 @@
  @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');                                 /*  fonte botao  */
 
 
+:root {
+    --cor-texto: white;
+    --cor-hover: rgba(255, 255, 255, 0.253);
+}
+
+.invisivel {
+    display: none;
+}
+
 body{
     background-color: #171616;
     color: white;
@@ -83,12 +92,21 @@ footer p{
     font-family: 'Bona Nova', serif;
 }
 
+
+
+/*     tela de Ranking            */
+
+
+/*  ----- Funcionalidades gerais ----- */
 #icone-configuracao:hover,
-#icone-sobre,
-.botao-opcao {
+#icone-sobre:hover,
+.botao-opcao,
+#imagem-user {
     cursor: pointer;
 }
 
+
+/*  ---------------------------------- */
 
 /* ------------------------------ Media query para computadores --------------------------------- */
 @media (min-width: 530px){      
@@ -143,7 +161,7 @@ footer p{
         display: none;
     }
     .botao-opcao:hover{
-        background-color: rgba(255, 255, 255, 0.384);
+        background-color: var(--cor-hover);
         left: 3px;
         top: 3px;
         cursor: pointer;
@@ -174,9 +192,12 @@ footer p{
         transition: all 600ms cubic-bezier(0.5, -0.04, 0.25, 1);
     }
     #icone-configuracao:hover,
-    #icone-sobre {
+    #icone-sobre,
+    #nome-perfil {
         cursor: pointer;
     }
+
+
 }
 /*-----------------------------------------------------------------------------------------*/
 
