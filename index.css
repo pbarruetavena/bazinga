@@ -20,7 +20,7 @@ body{
     float: right;
 }
 
-main{
+#principal{
     display: flex;
 }
 
@@ -73,7 +73,6 @@ main{
 }
 #icone-configuracao,
 #icone-sobre{
-    font-size: 5vw;
     margin: 20px;
 }
 
@@ -84,9 +83,15 @@ footer p{
     font-family: 'Bona Nova', serif;
 }
 
+#icone-configuracao:hover,
+#icone-sobre,
+.botao-opcao {
+    cursor: pointer;
+}
 
 
-@media (min-width: 530px){      /*  Para computadores em geral  */
+/* ------------------------------ Media query para computadores --------------------------------- */
+@media (min-width: 530px){      
     body{
         display: grid;
         grid-template-columns: 1fr 60vw 1fr;
@@ -98,7 +103,12 @@ footer p{
         grid-column: 1 / 4;
     }
 
-    main{
+    #icone-configuracao,
+    #icone-sobre{
+        font-size: 5vw;
+    }
+
+    #principal{
         grid-row: 2 / 3;
         grid-column: 2 / 3;
 
@@ -128,7 +138,7 @@ footer p{
         margin-bottom: 10px;
     }
 
-    /*     FUNCIONALIDADES     */
+    /*   -------------- FUNCIONALIDADES --------------    */
     .botao-opcao p{
         display: none;
     }
@@ -168,16 +178,17 @@ footer p{
         cursor: pointer;
     }
 }
+/*-----------------------------------------------------------------------------------------*/
 
-
-@media (max-width: 530px){          /*  Para celulares (vertical) em geral  */
+/* --------------------------------- Telas de pequena largura ----------------------------------- */
+@media (max-width: 530px) {
     body {
         display: flex;
         flex-direction: column;
     }
 
     header #titulo {
-        font-size: 20px;
+        font-size: 5vw;
     }
     #titulo h1{
         margin-bottom: 0px;
@@ -185,6 +196,35 @@ footer p{
     #titulo h2{
         margin-top: 0px;;
     }
+    header #icone-configuracao,
+    header #icone-sobre {
+        font-size: 32px;
+    }
 
-    
+    #principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #secao-perfil #imagem-user{
+        width: 26vh;
+    }
+    #secao-perfil #nome-perfil {
+        margin-bottom: 23px;
+        margin-top: 7px;
+    } 
+
+    #opcoes {
+        align-items: center;
+        gap: 19px;
+        margin-bottom: calc(97px - 20vw);
+    }
+    #opcoes .botao-opcao {
+        width: 72vw;
+    }
+    #opcoes .botao-opcao p {
+        display: none;
+    }
 }
+/*  --------------------------------------------------------------------------------------------  */
