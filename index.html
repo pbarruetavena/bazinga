@@ -36,54 +36,54 @@
         </section>
     </main>
 
-    <main id="ranking" class="invisivel"></main>
+    <main id="secao-ranking" class="invisivel"></main>
 
     <main id="configuracao" class="invisivel">
+        <main id="container-configuracao">
+            <section id="secao-selecao-perfil">
+                <article class="perfil-para-selecao perfil-selecionado">
+                    <img class="imagem-usuarios" src="imagens/icone.png">
+                    <div class="container-dados-perfil">
+                        <p class="nome-perfil-selecao">Anônimo</p>
+                        <p clas="id-selecao">ID: 0</p>
+                    </div>
+                    <button class="apagar-perfil">apaga perfil</button>
+                </article>
 
-        <section id="selecao-perfil">
-            <article class="perfil-para-selecao perfil-selecionado">
-                <img class="imagem-usuarios" src="imagens/icone.png">
-                <div class="container-dados-perfil">
-                    <p class="nome-perfil-selecao">Anônimo</p>
-                    <p clas="id-selecao">ID: 0</p>
-                </div>
-                <button class="apagar-perfil"></button>
-            </article>
-
-            <button id="adicionar-perfil"></button>
-        </section>
-
-        <section id="configura-dados">
-
-            <section id="input-img-nome">
-                <img id="imagem-selecionada">
-                <div id="secao-input-salvamento">
-                    <label id="label-nome"><input type="text" id="input-nome" maxlength="12"></label>
-                    <button id="trocar-imagem">p</button>
-                    <button id="salvar">i</button>
-                </div>
+                <button id="adicionar-perfil">adcionar perfil</button>
             </section>
 
-            <section id="configura-tema">
-                <div id="selecao-tema">
+            <section id="secao-configura-dados">
 
-                    <article class="amostra-tema">
-                        <div class="container-cores">
-                            <div class="display-cor cor1"></div>
-                            <div class="display-cor cor2"></div>
-                        </div>
-                        <button class="apagar-tema"></button>
-                    </article>
+                <section id="secao-input-img-nome">
+                    <img id="imagem-selecionada">
+                    <div id="secao-input-salvamento">
+                        <label id="label-nome"><input type="text" id="input-nome" maxlength="12"></label>
+                        <button id="trocar-imagem">trocar imaggem</button>
+                        <button id="salvar">salvar</button>
+                    </div>
+                </section>
 
-                </div>
+                <section id="secao-configura-tema">
+                    <div id="selecao-tema">
 
-                <div id="inputs-cores">
-                    <label id="label-cor1"><input type="color" id="cor1"></label>
-                    <label id="label-cor2"><input type="color" id="cor2"></label>
-                </div>
+                        <article class="amostra-tema">
+                            <div class="container-cores">
+                                <div class="display-cor cor1"></div>
+                                <div class="display-cor cor2"></div>
+                            </div>
+                            <button class="apagar-tema">apaga tema</button>
+                        </article>
+
+                    </div>
+
+                    <div id="inputs-cores">
+                        <label id="label-cor1">Cor principal<input type="color" id="cor1"></label>
+                        <label id="label-cor2">Cor secundária<input type="color" id="cor2"></label>
+                    </div>
+                </section>
             </section>
-        </section>
-
+        </main>
     </main>
 
     <footer>

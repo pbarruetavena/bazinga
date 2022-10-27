@@ -1,3 +1,38 @@
-#configuracao #selecao-perfil .imagem-usuarios{
-    width: 20vw;
+
+#configuracao #secao-selecao-perfil .imagem-usuarios{
+    width: 10vw;
+}
+
+@media (min-width: 530px) {
+    #configuracao {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+    #container-configuracao {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        border: 1px white solid;
+        border-radius: 5%;
+        background-color: rgba(45, 43, 43, 0.844);
+    }
+    #secao-selecao-perfil {
+        grid-column: 1 / 2;
+    }
+    #secao-configura-dados {
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    #secao-configura-dados #secao-input-img-nome {
+        grid-row: 1 / 2;
+    }
+    #secao-configura-dados #secao-configura-tema {
+        grid-row: 2 / 3;
+    }
+
+
+    #secao-selecao-perfil {
+        border-radius: 5%;
+        border: 1px white solid;
+    }
 }

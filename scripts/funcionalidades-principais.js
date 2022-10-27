@@ -11,7 +11,7 @@ botoesOpcaoArr[0].addEventListener('click', () => window.location.href = 'jogo/j
 
 
 document.querySelector('#configuracao').style.display = 'none';
-document.querySelector('#ranking').style.display = 'none';
+document.querySelector('#secao-ranking').style.display = 'none';
 
 // testar janela de configurações
 function mostraConf(){
