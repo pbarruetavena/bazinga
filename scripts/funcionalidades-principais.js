@@ -36,4 +36,4 @@ $('.botao-opcao:first-child').click( () => location.href = 'jogo/jogo.html');
 
 
 //teste --- descomentar para desenvolver o menu de configurações
-mostraConf();
+//mostraConf();
