@@ -71,7 +71,7 @@ body{
 #titulo{
     display: block;
     text-align: center;
-    margin-top: 5vw;
+    margin-top: 4vw;
     margin-bottom: auto;
     text-shadow: 5px 5px 6px rgb(91 92 91 / 40%);
 }
@@ -111,7 +111,7 @@ footer p{
 /*  ---------------------------------- */
 
 /* ------------------------------ Media query para computadores --------------------------------- */
-@media (min-width: 530px){      
+@media (min-width: 601px){      
     body{
         display: grid;
         grid-template-columns: 1fr 60vw 1fr;
@@ -202,7 +202,7 @@ footer p{
 /*-----------------------------------------------------------------------------------------*/
 
 /* --------------------------------- Telas de pequena largura ----------------------------------- */
-@media (max-width: 530px) {
+@media (max-width: 600px) {
     body {
         display: flex;
         flex-direction: column;

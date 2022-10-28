@@ -44,27 +44,34 @@
         <main id="container-configuracao">
 
             <section id="secao-selecao-perfil">
-                <article class="perfil-para-selecao perfil-selecionado">
+                <article class="perfil-para-selecao">        <!-- Colocar a classe selecionado depois - perfil-selecionado -->
                     <img class="imagem-usuarios" src="imagens/icone.png">
 
                     <div class="container-dados-perfil">
                         <p class="nome-perfil-selecao">Anônimo</p>
-                        <p class="id-selecao">ID: 0</p>
-                        <button class="apagar"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <p class="pontuacao-max-container">Max: 0pts</p>
+                        <button class="botao-conf apagar"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>
                 </article>
 
-                <button id="adicionar-perfil">adcionar perfil</button>
+                <button id="adicionar-perfil" class="botao-conf"><i class="fa fa-plus" aria-hidden="true"></i></button>
             </section>
 
             <section id="secao-configura-dados">
 
                 <section id="secao-input-img-nome">
-                    <img id="imagem-selecionada">
+                    <div id="container-img-selecionada">
+                        <img id="imagem-selecionada" src="imagens/icone.png">
+                    </div>
                     <div id="secao-input-salvamento">
-                        <label id="label-nome"><input type="text" id="input-nome" maxlength="12"></label>
-                        <button id="trocar-imagem">trocar imaggem</button>
-                        <button id="salvar">salvar</button>
+                        <div id="secao-nome-fechar">
+                            <label id="label-nome"><input type="text" id="input-nome" maxlength="20" placeholder="Nome"></label>
+                            <button id="botao-fechar-configuracao" class=""><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="secao-botoes-salvamento">
+                            <button id="trocar-imagem" class="botao-conf"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            <button id="salvar">Salvar</button>
+                        </div>
                     </div>
                 </section>
 
@@ -76,14 +83,17 @@
                                 <div class="display-cor cor1"></div>
                                 <div class="display-cor cor2"></div>
                             </div>
-                            <button class="apagar"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button class="botao-conf apagar"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </article>
-
+                        
+                        <div class="container-botao-add-tema">
+                            <button id="adicionar-tema" class="botao-conf"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
                     </div>
 
                     <div id="inputs-cores">
-                        <label id="label-cor1">Cor principal<input type="color" id="cor1"></label>
-                        <label id="label-cor2">Cor secundária<input type="color" id="cor2"></label>
+                        <label id="label-cor1">Principal<input type="color" id="cor1"></label>
+                        <label id="label-cor2">Secundária<input type="color" id="cor2"></label>
                     </div>
                 </section>
             </section>

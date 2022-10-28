@@ -1,7 +1,9 @@
 
 :root {
+    --cor-fundo: rgba(45, 43, 43, 0.844);
     --cor-texto: white;
     --cor-hover: rgba(255, 255, 255, 0.253);
+    --cor-erro: rgb(116 0 0);
 }
 
 
@@ -29,29 +31,183 @@
     justify-content: center;
 
 }
-.container-dados-perfil .apagar {
+.container-dados-perfil .botao-conf {
     align-self: flex-end;
 }
 .container-dados-perfil .nome-perfil-selecao,
-.container-dados-perfil .id-selecao {
+.container-dados-perfil .pontuacao-max-container {
     margin: 3px;    
 }
 
-.apagar {
+.botao-conf {
     padding: 6px;
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 100%;
+
+    border: 1px var(--cor-texto) solid;
+    color: var(--cor-texto);
     background-color: rgba(23, 22, 22, 0);
     cursor: pointer;
 }
-.apagar:hover {
+.botao-conf:hover {
     position: relative;
     top: 2px;
     left: 2px;
 }
+#container-configuracao .apagar:hover {
+    background-color: rgba(66, 65, 65, 0.55);
+    
+    color: var(--cor-erro);
+    border-color: var(--cor-erro);
+}
+.perfil-para-selecao:not(.perfil-selecionado):hover {
+    background-color: rgba(111, 111, 110, 0.397);
+    cursor: pointer;
+}
 
-@media (min-width: 530px) {
+#container-img-selecionada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imagem-selecionada {
+    width: 13vw;
+}
+#secao-input-img-nome {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+}
+#secao-input-salvamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+}
+#secao-nome-fechar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2vw;
+}
+#label-nome {
+    width: 60%;
+    height: 20px;
+}
+#input-nome {
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 1px var(--cor-texto) solid; 
+}
+#botao-fechar-configuracao {
+    position: relative;
+    top: -32px;
+    right: -18px;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 100%;
+    border: 1px var(--cor-texto) solid;
+    color: var(--cor-texto);
+    background-color: rgba(23, 22, 22, 0);
+    cursor: pointer;
+}
+#botao-fechar-configuracao:hover {
+    top: -30px;
+    right: -20px;
+}
+#secao-botoes-salvamento {
+    display: flex;
+    gap: 5vw;
+}
+#salvar {
+    justify-self: flex-end;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 1px var(--cor-texto) solid;
+}
+#salvar:hover {
+    cursor: pointer;
+}
+
+
+#secao-configura-tema {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+}
+#selecao-tema {
+    border: 1px var(--cor-texto) solid;
+    height: 16vh;
+    width: 19vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.amostra-tema {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.amostra-tema:hover {
+    background-color: rgba(170, 162, 162, 0.156);
+    cursor: pointer;
+}
+.container-cores {
+    width: 70%;
+    height: 50%;
+    border: 1px var(--cor-texto) solid;
+}
+.display-cor {
+    width: 100%;
+    height: 50%;
+}
+.cor1 {
+    background-color: #171616;
+}
+.cor2 {
+    background-color: white;
+}
+.container-botao-add-tema {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputs-cores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+#inputs-cores label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#inputs-cores label input {
+    width: 50%;
+}
+
+
+@media (min-width: 600px) {
     #configuracao {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
@@ -67,6 +223,7 @@
         grid-column: 1 / 2;
     }
     #secao-configura-dados {
+        grid-row: 1 / 2;
         grid-column: 2 / 3;
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -92,6 +249,7 @@
 
 
     /*  SEÇÃO CONTROLES E INPUTS DE NOME    */
+
 
     /*  SEÇÃO DE INPUT DE CORES   */
 
