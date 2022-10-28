@@ -16,10 +16,12 @@
     display: none;
 }
 
+html,
 body{
     background-color: #171616;
     color: white;
     overflow: hidden;
+    margin: 0px;
 }
 
 #icone-configuracao{
@@ -167,8 +169,6 @@ footer p{
         cursor: pointer;
     }
 
-    .botao-opcao:hover .icone-botao {
-    }
     #jogar:hover .icone-botao {
         transform: translate(-54px, 5px);
     }

@@ -1,6 +1,54 @@
 
-#configuracao #secao-selecao-perfil .imagem-usuarios{
-    width: 10vw;
+:root {
+    --cor-texto: white;
+    --cor-hover: rgba(255, 255, 255, 0.253);
+}
+
+
+#secao-selecao-perfil {
+    border-right: 1px var(--cor-texto) solid;
+}
+.perfil-para-selecao {
+    border-radius: 5%;
+    border: 1px var(--cor-texto) solid;
+    margin: 5px;
+    padding: 3px;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container-dados-perfil {
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.container-dados-perfil .apagar {
+    align-self: flex-end;
+}
+.container-dados-perfil .nome-perfil-selecao,
+.container-dados-perfil .id-selecao {
+    margin: 3px;    
+}
+
+.apagar {
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 100%;
+    background-color: rgba(23, 22, 22, 0);
+    cursor: pointer;
+}
+.apagar:hover {
+    position: relative;
+    top: 2px;
+    left: 2px;
 }
 
 @media (min-width: 530px) {
@@ -10,9 +58,9 @@
     }
     #container-configuracao {
         display: grid;
-        grid-template-columns: 2fr 5fr;
-        border: 1px white solid;
-        border-radius: 5%;
+        grid-template-columns: 3fr 5fr;
+        border: 1px var(--cor-texto) solid;
+        border-radius: 3%;
         background-color: rgba(45, 43, 43, 0.844);
     }
     #secao-selecao-perfil {
@@ -30,9 +78,21 @@
         grid-row: 2 / 3;
     }
 
-
-    #secao-selecao-perfil {
-        border-radius: 5%;
-        border: 1px white solid;
+    /*  SEÇÃO DE SELEÇÃO DE PERFIL*/
+    #configuracao #secao-selecao-perfil .imagem-usuarios{
+        width: 7vw;
+        height: 7vw;
     }
+    #secao-selecao-perfil {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    /*  SEÇÃO CONTROLES E INPUTS DE NOME    */
+
+    /*  SEÇÃO DE INPUT DE CORES   */
+
 }
