@@ -20,7 +20,7 @@ html,
 body{
     background-color: #171616;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0px;
 }
 
@@ -69,9 +69,10 @@ body{
 }
 
 #titulo{
+    height: 100%;
     display: block;
     text-align: center;
-    margin-top: 4vw;
+    margin-top: 4vh;
     margin-bottom: auto;
     text-shadow: 5px 5px 6px rgb(91 92 91 / 40%);
 }
@@ -96,9 +97,6 @@ footer p{
 
 
 
-/*     tela de Ranking            */
-
-
 /*  ----- Funcionalidades gerais ----- */
 #icone-configuracao:hover,
 #icone-sobre:hover,
@@ -115,7 +113,7 @@ footer p{
     body{
         display: grid;
         grid-template-columns: 1fr 60vw 1fr;
-        grid-template-rows: 30vh 55vh 15vh;
+        grid-template-rows: 25vh 60vh 15vh;
     }
 
     header{
@@ -146,7 +144,7 @@ footer p{
     #titulo h2{
         margin-top: auto;
         margin-bottom: auto;
-        font-size: 7vh;
+        font-size: calc(2vw + 2vh);
     }
 
     #imagem-user{
@@ -186,6 +184,9 @@ footer p{
         font-size: 30px;
     }
 
+    #icone-sobre:hover {
+        text-shadow: 8px 8px 8px rgb(91 92 91 / 40%);
+    }
 
     #icone-configuracao:hover{
         transform: rotate(360deg);
@@ -209,7 +210,7 @@ footer p{
     }
 
     header #titulo {
-        font-size: 5vw;
+        font-size: 4vw;
     }
     #titulo h1{
         margin-bottom: 0px;
