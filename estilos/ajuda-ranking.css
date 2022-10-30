@@ -70,7 +70,6 @@
 #controles-laterais-ranking {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
-    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -90,15 +89,67 @@
     border: 1px var(--cor-texto) solid;
     cursor: pointer;
 }
-#controles-laterais-ranking button:hover {
-    position: relative;
-    top: 3px;
-    left: 3px;
-}
+
 #controles-laterais-ranking #fechar-ranking {
     margin: 10px;
     margin-bottom: 30px;
     align-self: flex-end;
+}
+
+@media (min-width: 601px) {
+    #controles-laterais-ranking button:hover {
+        position: relative;
+        top: 3px;
+        left: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #secao-ranking{
+        margin: 20px;
+        height: 50vh;
+    }
+    #container-secao-ranking {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    #titulo-ranking {
+        order: 1;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+    }
+    #container-ranking {
+        min-width: 50vw;
+        order: 3;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    #controles-laterais-ranking {
+        order: 2;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    #fechar-ranking {
+        justify-self: flex-start;
+        position: absolute;
+        right: 2vh;
+        top: 2vw;
+    }
+    #controles-laterais-ranking button {
+        padding: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin: 3px;
+        font-size: 1em;
+
+    }
 }
 
 
@@ -108,6 +159,8 @@
 #secao-ajuda {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
+
+    display: flex;
 }
 #menu-ajuda {
     height: 100%;

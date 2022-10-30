@@ -73,6 +73,7 @@ function mostraAjuda(){
 $('#icone-sobre').click(() => open('sobre-nos.html', '_blank'));
 
 $('#icone-configuracao').click(mostraConf);
+$('#botao-fechar-configuracao').click(mostraConf);
 $('#secao-perfil').click(mostraConf);
 $('#ranking').click(mostraRanking);
 $('#fechar-ranking').click(mostraRanking);
@@ -84,5 +85,5 @@ $('.botao-opcao:first-child').click( () => location.href = 'jogo/jogo.html');
 
 //teste --- descomentar para desenvolver o menu
 //mostraConf();
-//mostraRanking();
+mostraRanking();
 //mostraAjuda();

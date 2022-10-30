@@ -1,2 +1,2 @@
 
-$('#botao-home').click( () => open("index.html"));
+$('#botao-home').click( () => location.href = "index.html");
