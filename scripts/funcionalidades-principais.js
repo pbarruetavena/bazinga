@@ -49,6 +49,24 @@ function mostraRanking(){
     }
 }
 
+function mostraAjuda(){
+    if(menuSelecionado != 'ajuda'){
+        $('#secao-ajuda').css({display: "block"});
+        $('#secao-ranking').css({display: "none"});
+        $('#principal').css({display: "none"});
+        $('#configuracao').css({display: "none"});
+
+        menuSelecionado = 'ajuda';
+    } else {
+        $('#secao-ajuda').css({display: "none"});
+        $('#secao-ranking').css({display: "none"});
+        $('#principal').css({display: "flex"});
+        $('#configuracao').css({display: "none"});
+
+        menuSelecionado = 'principal';
+    }
+}
+
 
 
 //              --------------------- BOTÕES -------------------------------
@@ -58,10 +76,13 @@ $('#icone-configuracao').click(mostraConf);
 $('#secao-perfil').click(mostraConf);
 $('#ranking').click(mostraRanking);
 $('#fechar-ranking').click(mostraRanking);
+$('#ajuda').click(mostraAjuda);
+$('#fechar-ajuda').click(mostraAjuda);
 
 $('.botao-opcao:first-child').click( () => location.href = 'jogo/jogo.html');
 
 
 //teste --- descomentar para desenvolver o menu de configurações
 //mostraConf();
-mostraRanking();
+//mostraRanking();
+mostraAjuda();

@@ -104,3 +104,82 @@
 
 
 /*     ======================== AJUDA =============================  */
+
+#secao-ajuda {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+#menu-ajuda {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 5fr 2fr;
+    border: 1px var(--cor-texto) solid;
+    border-radius: 10px;
+}
+#contem-fechar-ajuda {
+    padding: 10px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#fechar-ajuda {
+    font-size: 16px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: white 1px solid;
+    background-color: inherit;
+    color: white;
+    border-radius: 10em;
+}
+#container-ajuda {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-bottom: 3px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    width: 100%;
+    border: 1px var(--cor-texto) solid;
+}
+#interacao-ajuda {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+#mensagem-ajuda {
+    margin: 3px;
+}
+#controles-ajuda {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+#controles-ajuda button {
+    font-size: 15px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: white 1px solid;
+    background-color: inherit;
+    color: white;
+    border-radius: 100%;
+}
+#menu-ajuda button:hover {
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
