@@ -93,8 +93,9 @@ footer{
 }
 footer p{
     font-family: 'Bona Nova', serif;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
 
 
 /*  ----- Funcionalidades gerais ----- */
@@ -249,9 +250,5 @@ footer p{
         display: none;
     }
     
-    footer p {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
 }
 /*  --------------------------------------------------------------------------------------------  */

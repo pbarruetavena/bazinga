@@ -12,6 +12,8 @@
     grid-column: 2 / 3;
 }
 #container-secao-ranking {
+    border-radius: 10px;
+    background-color: rgba(45, 43, 43, 0.844);
     margin-left: auto;
     margin-right: auto;
     margin-top: 3px;
@@ -170,6 +172,7 @@
     grid-template-rows: 5fr 2fr;
     border: 1px var(--cor-texto) solid;
     border-radius: 10px;
+    background-color: rgba(45, 43, 43, 0.844);
 }
 #contem-fechar-ajuda {
     padding: 10px;
@@ -200,6 +203,22 @@
     height: 90%;
     width: 100%;
     border: 1px var(--cor-texto) solid;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#container-ajuda h3,
+#container-ajuda p {
+    text-align: center;
+}
+#container-ajuda h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+#container-ajuda p {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #interacao-ajuda {
     grid-column: 2 / 3;
@@ -235,4 +254,10 @@
     position: relative;
     top: 2px;
     left: 2px;
+}
+@media (max-width: 600px) {
+    #secao-ajuda {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }
