@@ -19,24 +19,22 @@ let confTemas = [
     }
 ];
 
+let confRanking = [
+    {
+        usuario: 1,
+        pontuacao: 0
+    }
+];
+
 
 //  MÉTODOS PARA SALVAR E CARREGAR INFORMAÇÕES NA WEB STORAGE
 let storage = {
-    carregarPerfil: (perfis) => {
-        if(localStorage.getItem('perfis')){
-            perfis = JSON.parse(localStorage.getItem('perfis'));
-        }
-    },
+    carregarPerfil: () => {
 
-    salvarTemas: (temas) => {
-        if(localStorage.getItem('temas')){
-            temas = JSON.parse(localStorage.getItem('temas'));
-        }
-    },
+        perfis = JSON.parse(localStorage.getItem('perfis'));
 
-    salvarPerfil: (perfis) => {
-        if(perfis.length === 0){
-            confPerfis.push(
+        if(perfis.length === 0 || perfis == null){
+            perfis.push(
                 {
                     nome: "Anônimo",
                     imagem: "icone.png",
@@ -44,20 +42,58 @@ let storage = {
                     tema: 0
                 }
             );
-
-            localStorage.setItem('perfis', JSON.stringify(confPerfis));
         }
+
+        return perfis
     },
 
-    salvarTemas: () => {
-        if(confTemas.length === 0){
-            confTemas.push(
+    carregarTemas: () => {
+        let temas;
+
+        temas = JSON.parse(localStorage.getItem('temas'));   
+
+        if(temas.length === 0 || tema == null){
+            temas.push(
                 {
                     corPrimaria: "#171616",
                     corSecundaria: "white"
                 }
             );
         }
+
+        return temas;
+    },
+
+    carregarRanking: () => {
+
+        ranking = JSON.parse(localStorage.getItem('ranking'));
+
+        if(ranking.length == 0 || ranking == null){
+            ranking.push(
+                {
+                    usuario: 1,
+                    pontuacao: 0
+                }
+            );
+        }
+    },
+
+    salvarPerfil: (perfis) => {
+
+        localStorage.setItem('perfis', JSON.stringify(perfis));
+    
+    },
+
+    salvarTemas: (temas) => {
+
+        localStorage.setItem('temas', JSON.stringify(temas));
+
+    },
+
+    salvarRanking: (ranking) => {
+
+        localStorage.setItem('ranking', JSON.stringify(ranking));
+
     }
 };
 
@@ -71,6 +107,6 @@ let atualizaPagina = {
     },
 
     tema: () => {
-        
+        document.querySelector(':root').style.setProperty('--cor-texto', 'black');
     }
 };
