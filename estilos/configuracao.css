@@ -1,4 +1,8 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap'); /* fonte para os textos de exibição do menu*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,300&display=swap'); /* fonte para os textos de comando do menu*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap'); /* fonte para o botão salvar */
+
 :root {
     --cor-fundo: rgba(45, 43, 43, 0.844);
     --cor-texto: white;
@@ -14,8 +18,10 @@
     border-radius: 5%;
     border: 1px var(--cor-texto) solid;
     margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 3px;
-
+    font-family: 'Work Sans', sans-serif;
 
     display: flex;
     flex-direction: row;
@@ -134,17 +140,31 @@
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     border: 1px var(--cor-texto) solid;
+    font-family: 'Kanit', sans-serif;
 }
 #salvar:hover {
     cursor: pointer;
+    position: relative;
+    top: 2px;
+    left: 2px;
 }
 
 
 #secao-configura-tema {
     display: grid;
     grid-template-columns: 5fr 3fr;
+    position: relative;
+    font-family: 'Mulish', sans-serif;
+}
+#titulo-secao-tema-config {
+    content: 'Seleção de tema:';
+    position: absolute;
+    top: 7px;
+    left: 5vw;
+    margin: 3px;
 }
 #selecao-tema {
+    overflow-x: auto;
     border: 1px var(--cor-texto) solid;
     height: 16vh;
     width: 19vw;
@@ -220,8 +240,13 @@
         background-color: rgba(45, 43, 43, 0.844);
     }
     #secao-selecao-perfil {
+        margin: 12px;
         grid-column: 1 / 2;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px var(--cor-texto) solid;
     }
+
     #secao-configura-dados {
         grid-row: 1 / 2;
         grid-column: 2 / 3;
@@ -244,7 +269,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+    }
+    #adicionar-perfil {
+        align-self: center;
     }
 
 
