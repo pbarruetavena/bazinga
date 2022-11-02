@@ -4,7 +4,7 @@ let temaAtual = {
     corSecundaria: "black",
     corContainer: "#f5e9d9"
 };
-let perfilAtual;
+let perfilAtual = 0;
 
 let perfis = [];
 let ranking = [];

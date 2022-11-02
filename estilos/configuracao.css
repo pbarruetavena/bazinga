@@ -13,6 +13,7 @@
 #container-configuracao {
     background-color: var(--cor-fundo-container);
     overflow: hidden;
+    position: relative;
 }
 #secao-selecao-perfil {
     border-right: 1px var(--cor-texto) solid;
@@ -20,7 +21,6 @@
 }
 .perfil-para-selecao {
     border-radius: 5%;
-    border: 1px var(--cor-texto) solid;
     margin: 5px;
     margin-left: 10px;
     margin-right: 10px;
@@ -31,6 +31,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.perfil-selecionado {
+    border: 1px var(--cor-texto) solid;
 }
 .container-dados-perfil {
     margin-top: 5px;
@@ -61,14 +64,10 @@
     cursor: pointer;
 }
 .botao-conf:hover {
-    position: relative;
-    top: 2px;
-    left: 2px;
+    transform: translate(2px, 2px);
 }
 #container-configuracao .apagar:hover {
-    
-    color: var(--cor-erro);
-    border-color: var(--cor-erro);
+
 }
 .perfil-para-selecao:not(.perfil-selecionado):hover {
     background-color: rgba(111, 111, 110, 0.397);
@@ -87,17 +86,21 @@
     display: grid;
     grid-template-columns: 3fr 4fr;
 }
-#secao-input-salvamento {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 22px;
-}
-#secao-nome-fechar {
+#secao-input-troca {
     display: flex;
     justify-content: flex-start;
     gap: 2vw;
+    align-items: center;
+    position: relative;
+    left: -30px;
 }
+#trocar-imagem {
+    order: -1;
+    position: relative;
+    top: 42px;
+    z-index: 10;
+}
+
 #label-nome {
     width: 60%;
     height: 20px;
@@ -114,28 +117,25 @@
     border: 1px var(--cor-texto) solid; 
 }
 #botao-fechar-configuracao {
-    position: relative;
-    top: -32px;
-    right: -18px;
-    padding: 6px;
-    padding-left: 8px;
-    padding-right: 8px;
     border-radius: 100%;
     border: 1px var(--cor-texto) solid;
     color: var(--cor-texto);
     background-color: rgba(23, 22, 22, 0);
     cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+#botao-fechar-configuracao,
+#deletar-perfil,
+#salvar {
+    position: absolute;
+    font-size: 20px;
 }
 #botao-fechar-configuracao:hover {
-    top: -30px;
-    right: -20px;
+
 }
-#secao-botoes-salvamento {
-    display: flex;
-    gap: 5vw;
-}
+
 #salvar {
-    justify-self: flex-end;
     padding: 4px;
     padding-left: 10px;
     padding-right: 10px;
@@ -144,14 +144,22 @@
     color: var(--cor-texto);
     border: 1px var(--cor-texto) solid;
     font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+
+    bottom: 12px;
+    right: 10px;
+    z-index: 10;
 }
 #salvar:hover {
     cursor: pointer;
-    position: relative;
-    top: 2px;
-    left: 2px;
+    transform: translate(2px, 2px);
 }
-
+#deletar-perfil {
+    bottom: 12px;
+    right: 100px;
+    z-index: 10;
+    font-size: 20px;
+}
 
 #secao-configura-tema {
     display: grid;
