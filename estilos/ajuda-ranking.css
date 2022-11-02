@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap'); /* Paragrafos do como jogar */
 
 :root {
-    --cor-fundo: rgba(45, 43, 43, 0.844);
+    --cor-fundo-container: rgba(45, 43, 43, 0.844);
     --cor-texto: white;
     --cor-hover: rgba(255, 255, 255, 0.253);
     --cor-erro: rgb(116 0 0);
@@ -18,7 +18,7 @@
 }
 #container-secao-ranking {
     border-radius: 10px;
-    background-color: rgba(45, 43, 43, 0.844);
+    background-color: var(--cor-fundo-container);
     margin-left: auto;
     margin-right: auto;
     margin-top: 3px;
@@ -181,7 +181,7 @@
     grid-template-rows: 5fr 2fr;
     border: 1px var(--cor-texto) solid;
     border-radius: 10px;
-    background-color: rgba(45, 43, 43, 0.844);
+    background-color: var(--cor-fundo-container);
 }
 #contem-fechar-ajuda {
     padding: 10px;

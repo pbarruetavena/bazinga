@@ -1,50 +1,56 @@
-// let temaAtual = {
-//     corPrimaria: "#171616",
-//     corSecundaria: "white"
-// }
 
-let confPerfis = [
-    {
-        nome: "Anônimo",
-        imagem: "icone.png",
-        pontuacao: 0,
-        tema: 0
-    }
-];
+let temaAtual = {
+    corPrimaria: "#c8c5bf",
+    corSecundaria: "black",
+    corContainer: "#f5e9d9"
+};
+let perfilAtual;
 
-let confTemas = [
-    {
-        corPrimaria: "#171616",
-        corSecundaria: "white" 
-    }
-];
+let perfis = [];
+let ranking = [];
+let temas = [];
+// let confPerfis = [
+//     {
+//         nome: "Anônimo",
+//         imagem: "icone.png",
+//         pontuacao: 0,
+//         tema: 0
+//     }
+// ];
 
-let confRanking = [
-    {
-        usuario: 1,
-        pontuacao: 0
-    }
-];
+// let confTemas = 
+//     {
+//         corPrimaria: "#171616",
+//         corSecundaria: "white" 
+//     }
+// ];
+
+// let confRanking = [
+//     {
+//         usuario: 1,
+//         pontuacao: 0
+//     }
+// ];
 
 
 //  MÉTODOS PARA SALVAR E CARREGAR INFORMAÇÕES NA WEB STORAGE
 let storage = {
     carregarPerfil: () => {
-
         perfis = JSON.parse(localStorage.getItem('perfis'));
 
-        if(perfis.length === 0 || perfis == null){
+        if(perfis == null){
+            perfis = [];
             perfis.push(
                 {
                     nome: "Anônimo",
-                    imagem: "icone.png",
+                    imagem: "user-spock.png",
                     pontuacao: 0,
                     tema: 0
                 }
             );
         }
 
-        return perfis
+        return perfis;
     },
 
     carregarTemas: () => {
@@ -56,7 +62,8 @@ let storage = {
             temas.push(
                 {
                     corPrimaria: "#171616",
-                    corSecundaria: "white"
+                    corSecundaria: "white",
+                    corContainer: "rgba(45, 43, 43, 0.844)"
                 }
             );
         }
@@ -77,20 +84,29 @@ let storage = {
             );
         }
     },
+    
+    carregaPosPerfilAtual: () => {
+        let posicao_perfil_atual = JSON.parse(localStorage.getItem('perfil-atual'));
+        if(posicao_perfil_atual == null){
+            posicao_perfil_atual = 0;
+        }
 
-    salvarPerfil: (perfis) => {
+        return posicao_perfil_atual;
+    },
+
+    salvarPerfil: () => {
 
         localStorage.setItem('perfis', JSON.stringify(perfis));
     
     },
 
-    salvarTemas: (temas) => {
+    salvarTemas: () => {
 
         localStorage.setItem('temas', JSON.stringify(temas));
 
     },
 
-    salvarRanking: (ranking) => {
+    salvarRanking: () => {
 
         localStorage.setItem('ranking', JSON.stringify(ranking));
 
@@ -101,12 +117,29 @@ let storage = {
 
 
 //      MÉTODOS PARA INICIALIZAÇÃO DA PÁGINA
-let atualizaPagina = {
-    perfil: (perfis) => {
+let atualiza = {
+    perfil: (perfil) => {
 
     },
 
-    tema: () => {
-        document.querySelector(':root').style.setProperty('--cor-texto', 'black');
+    tema: (tema) => {
+        document.querySelector(':root').style.setProperty('--cor-texto', tema.corSecundaria);
+        document.querySelector(':root').style.setProperty('--cor-fundo', tema.corPrimaria);
+        document.querySelector(':root').style.setProperty('--cor-fundo-container', tema.corContainer);
     }
 };
+
+
+function inicializar(){
+    perfis = storage.carregarPerfil();
+    let posicao_perfil_atual = storage.carregaPosPerfilAtual();
+    let perfilAtual = perfis[posicao_perfil_atual];
+
+    atualiza.perfil(perfilAtual);
+
+    let posTemaAtual = perfilAtual.tema;
+    temas = storage.carregarTemas;
+    temaAtual = temas[posTemaAtual];
+
+    atualiza.tema(temaAtual);
+}
