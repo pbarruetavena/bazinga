@@ -95,9 +95,8 @@ let storage = {
     },
 
     salvarPerfil: () => {
-
+        localStorage.setItem('perfil-atual', perfilAtual);
         localStorage.setItem('perfis', JSON.stringify(perfis));
-    
     },
 
     salvarTemas: () => {

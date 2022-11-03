@@ -18,6 +18,7 @@
 #secao-selecao-perfil {
     border-right: 1px var(--cor-texto) solid;
     overflow-y: scroll;
+    height: calc(100% - 24px);
 }
 .perfil-para-selecao {
     border-radius: 5%;
@@ -131,9 +132,6 @@
     position: absolute;
     font-size: 20px;
 }
-#botao-fechar-configuracao:hover {
-
-}
 
 #salvar {
     padding: 4px;
@@ -171,7 +169,7 @@
     content: 'Seleção de tema:';
     position: absolute;
     top: 7px;
-    left: 5vw;
+    left: 2vw;
     margin: 3px;
 }
 #selecao-tema {
@@ -179,7 +177,9 @@
     border: 1px var(--cor-texto) solid;
     height: 16vh;
     width: 19vw;
-    margin: auto;
+    margin-top: 42px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -230,6 +230,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    height: 65%;
 }
 #inputs-cores label {
     display: flex;
@@ -240,6 +241,11 @@
     width: 50%;
 }
 
+@media (min-width: 959px) { /*  deixar o container dos perfis selecionáveis certo   */
+    #secao-selecao-perfil {
+        height: calc(90% - 2vw);
+    }
+}
 
 @media (min-width: 600px) {
     #configuracao {

@@ -16,6 +16,9 @@ function seleciona_perfil_config(e){
             perfilAtual = i;
         }
     }
+
+    document.querySelector('#input-nome').value = perfis[perfilAtual].nome;
+    document.querySelector('#imagem-selecionada').src = 'imagens/' + perfis[perfilAtual].imagem;
 }
 
 
@@ -80,9 +83,21 @@ let cria_perfis_existentes = (perfis) => {
     }
 }
 
-
 cria_perfis_existentes();
 
+
+// deixa um perfil já selecionado
+function iniciliza_perfil_selecionado(){
+    perfilAtual = JSON.parse(localStorage.getItem('perfil-atual'))
+    
+    if(perfilAtual == null)
+        perfilAtual = 0;
+    
+    let perfil_selecionado = perfisEl[perfilAtual];
+    perfil_selecionado.classList.add('perfil-selecionado');
+}
+
+iniciliza_perfil_selecionado();
 
 /*      TROCA DE IMAGEM     */
 let imagensDePerfil = [
@@ -101,6 +116,20 @@ function troca_imagem_de_perfil(){
     document.querySelector('#imagem-selecionada').src = `imagens/${imagensDePerfil[posImagem]}`;
     perfis[perfilAtual].imagem = imagensDePerfil[posImagem];
 
+    document.querySelectorAll('.imagem-usuarios')[perfilAtual].src = 'imagens/' + imagensDePerfil[posImagem];
 }
 
 $('#trocar-imagem').click(troca_imagem_de_perfil);
+
+
+/*    MUDANCA DE NOME                           NÃO ESTÁ FUNCIONANDO  aaaaaa */
+let inputNomeEl = document.querySelector('#input-nome');
+
+function muda_nome(){
+    let novoNome = inputNomeEl.value;
+
+    perfis[perfilAtual].nome = novoNome;
+    document.querySelectorAll('.nome-perfil-selecao')[perfilAtual] = novoNome;
+}
+
+inputNomeEl.addEventListener('change', muda_nome);
