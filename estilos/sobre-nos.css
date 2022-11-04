@@ -45,6 +45,14 @@ body {
 #container p {
     margin: 0px;
 }
+@font-face {
+    font-family: "Old English";
+    src: url("estilos/OldEnglish.ttf") format('ttf');
+}
 
+div p{
+    text-align: justify;
+    font-family: "Old English", sans-serif;
+}
 /*          *************************** ESTILIZAÇÃO DAS CARTAS *********************             */
 /* usar classes (.carta-selecionada, .carta-lateral, .carta-traseira) para controlar as posições, fazer transições e colocar easter eggs */
