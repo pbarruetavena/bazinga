@@ -18,7 +18,7 @@
 #secao-selecao-perfil {
     border-right: 1px var(--cor-texto) solid;
     overflow-y: scroll;
-    height: calc(100% - 24px);
+    padding: 6px;
 }
 .perfil-para-selecao {
     border-radius: 5%;
@@ -27,10 +27,12 @@
     margin-right: 10px;
     padding: 3px;
     font-family: 'Work Sans', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .perfil-selecionado {
@@ -52,6 +54,10 @@
 .container-dados-perfil .pontuacao-max-container {
     margin: 3px;    
 }
+.nome-perfil-selecao,
+.pontuacao-max-container {
+    font-size: 12px;
+}
 
 .botao-conf {
     padding: 6px;
@@ -67,9 +73,7 @@
 .botao-conf:hover {
     transform: translate(2px, 2px);
 }
-#container-configuracao .apagar:hover {
 
-}
 .perfil-para-selecao:not(.perfil-selecionado):hover {
     background-color: rgba(111, 111, 110, 0.397);
     cursor: pointer;
@@ -82,6 +86,7 @@
 }
 #imagem-selecionada {
     width: 13vw;
+    height: 13vw;
 }
 #secao-input-img-nome {
     display: grid;
@@ -169,7 +174,6 @@
     content: 'Seleção de tema:';
     position: absolute;
     top: 7px;
-    left: 2vw;
     margin: 3px;
 }
 #selecao-tema {
@@ -216,7 +220,7 @@
 .cor3 {
     background-color: var(--cor-fundo-container);
 }
-.container-botao-add-tema {
+#container-botao-add-tema {
     height: 100%;
     width: 20%;
     display: flex;
@@ -243,7 +247,7 @@
 
 @media (min-width: 959px) { /*  deixar o container dos perfis selecionáveis certo   */
     #secao-selecao-perfil {
-        height: calc(90% - 2vw);
+        height: 53vh;
     }
 }
 
@@ -288,6 +292,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
     }
     #adicionar-perfil {
         align-self: center;
@@ -295,7 +300,6 @@
 
 
     /*  SEÇÃO CONTROLES E INPUTS DE NOME    */
-
 
     /*  SEÇÃO DE INPUT DE CORES   */
 

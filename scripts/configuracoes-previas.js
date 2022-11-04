@@ -9,28 +9,6 @@ let perfilAtual = 0;
 let perfis = [];
 let ranking = [];
 let temas = [];
-// let confPerfis = [
-//     {
-//         nome: "Anônimo",
-//         imagem: "icone.png",
-//         pontuacao: 0,
-//         tema: 0
-//     }
-// ];
-
-// let confTemas = 
-//     {
-//         corPrimaria: "#171616",
-//         corSecundaria: "white" 
-//     }
-// ];
-
-// let confRanking = [
-//     {
-//         usuario: 1,
-//         pontuacao: 0
-//     }
-// ];
 
 
 //  MÉTODOS PARA SALVAR E CARREGAR INFORMAÇÕES NA WEB STORAGE

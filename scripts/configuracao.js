@@ -129,7 +129,51 @@ function muda_nome(){
     let novoNome = inputNomeEl.value;
 
     perfis[perfilAtual].nome = novoNome;
-    document.querySelectorAll('.nome-perfil-selecao')[perfilAtual] = novoNome;
+    let nomeEl = document.querySelector('.perfil-selecionado .nome-perfil-selecao');
+    nomeEl.innerHTML = novoNome;
 }
 
 inputNomeEl.addEventListener('change', muda_nome);
+
+
+
+/*         ******************** SELEÇÃO DE TEMAS ***********************            */
+
+let adicionar_tema = (novo_tema) => {
+
+    let novoTemaEl = document.createElement('article');
+    novoTemaEl.classList.add('amostra-tema');
+
+
+    let containerCoresEl = document.createElement('div');
+    containerCoresEl.classList.add('container-cores');
+
+    let cor1El = document.createElement('div');
+    cor1El.classList.add('display-cor');
+    cor1El.classList.add('cor1');
+    containerCoresEl.appendChild(cor1El);
+
+    let cor2El = document.createElement('div');
+    cor2El.classList.add('display-cor');
+    cor2El.classList.add('cor2');
+    containerCoresEl.appendChild(cor2El);
+
+    let cor3El = document.createElement('div');
+    cor3El.classList.add('display-cor');
+    cor3El.classList.add('cor3');
+    containerCoresEl.appendChild(cor3El);
+
+    novoTemaEl.appendChild(containerCoresEl);
+
+    let botaoApagarNovoTemaEl = document.createElement('button');
+    botaoApagarNovoTemaEl.classList.add('botao-conf');
+    botaoApagarNovoTemaEl.classList.add('apagar');
+    botaoApagarNovoTemaEl.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+    novoTemaEl.appendChild(botaoApagarNovoTemaEl);
+
+    let containerSelecaoTemasEl = document.querySelector('#selecao-tema');
+    let paiDoBotaoEl = document.querySelector('#container-botao-add-tema');
+    containerSelecaoTemasEl.insertBefore(novoTemaEl, paiDoBotaoEl);
+}
+
+$('#adicionar-tema').click(adicionar_tema);
