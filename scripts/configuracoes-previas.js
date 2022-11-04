@@ -1,4 +1,5 @@
 
+let posTemaAtual = null;
 let temaAtual = {
     corPrimaria: "#c8c5bf",
     corSecundaria: "black",
@@ -32,16 +33,15 @@ let storage = {
     },
 
     carregarTemas: () => {
-        let temas;
-
         temas = JSON.parse(localStorage.getItem('temas'));   
 
-        if(temas.length === 0 || tema == null){
+        if(temas == null){
+            temas = [];
             temas.push(
                 {
                     corPrimaria: "#171616",
-                    corSecundaria: "white",
-                    corContainer: "rgba(45, 43, 43, 0.844)"
+                    corSecundaria: "#ffffff",
+                    corContainer: "#2d2b2b"
                 }
             );
         }
@@ -96,7 +96,8 @@ let storage = {
 //      MÉTODOS PARA INICIALIZAÇÃO DA PÁGINA
 let atualiza = {
     perfil: (perfil) => {
-
+        document.querySelector('#imagem-user').src = 'imagens/' + perfil.imagem;
+        document.querySelector('#nome-perfil').innerHTML = perfil.nome;
     },
 
     tema: (tema) => {
@@ -109,8 +110,7 @@ let atualiza = {
 
 function inicializar(){
     perfis = storage.carregarPerfil();
-    let posicao_perfil_atual = storage.carregaPosPerfilAtual();
-    let perfilAtual = perfis[posicao_perfil_atual];
+    let perfilAtual = storage.carregaPosPerfilAtual();
 
     atualiza.perfil(perfilAtual);
 

@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap'); /* Paragrafos do como jogar */
 
 :root {
-    --cor-fundo-container: rgba(45, 43, 43, 0.844);
-    --cor-texto: white;
+    --cor-fundo-container: #2d2b2b;
+    --cor-texto: #ffffff;
     --cor-hover: rgba(255, 255, 255, 0.253);
-    --cor-erro: rgb(116 0 0);
+    --cor-erro: rgb(138, 2, 2);
 }
 
 /*     ======================== RANKING =============================  */

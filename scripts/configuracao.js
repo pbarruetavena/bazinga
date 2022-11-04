@@ -1,5 +1,8 @@
 
 let perfisEl = [];
+let temasEl = [];
+
+let tema_selecionado;
 
 //selecao de perfil
 
@@ -14,6 +17,7 @@ function seleciona_perfil_config(e){
     for(let i = 0; i < perfisEl.length; i++){
         if(perfisEl[i] == perfil_selecionado){
             perfilAtual = i;
+            atualiza.perfil(perfis[perfilAtual]);
         }
     }
 
@@ -117,12 +121,13 @@ function troca_imagem_de_perfil(){
     perfis[perfilAtual].imagem = imagensDePerfil[posImagem];
 
     document.querySelectorAll('.imagem-usuarios')[perfilAtual].src = 'imagens/' + imagensDePerfil[posImagem];
+    atualiza.perfil(perfis[perfilAtual]);
 }
 
 $('#trocar-imagem').click(troca_imagem_de_perfil);
 
 
-/*    MUDANCA DE NOME                           NÃO ESTÁ FUNCIONANDO  aaaaaa */
+/*    MUDANCA DE NOME      */
 let inputNomeEl = document.querySelector('#input-nome');
 
 function muda_nome(){
@@ -131,6 +136,7 @@ function muda_nome(){
     perfis[perfilAtual].nome = novoNome;
     let nomeEl = document.querySelector('.perfil-selecionado .nome-perfil-selecao');
     nomeEl.innerHTML = novoNome;
+    atualiza.perfil(perfis[perfilAtual]);
 }
 
 inputNomeEl.addEventListener('change', muda_nome);
@@ -138,6 +144,33 @@ inputNomeEl.addEventListener('change', muda_nome);
 
 
 /*         ******************** SELEÇÃO DE TEMAS ***********************            */
+
+// SELEÇÃO DE TEMA - CLICÁVEL
+
+let seleciona_tema_config = (e) => {
+    for(let tema of temasEl){
+        tema.classList.remove('tema-selecionado');
+    }
+
+    let temaSelecionado = e.currentTarget;
+    temaSelecionado.classList.add('tema-selecionado');
+
+    for(let i = 0; i < temasEl.length; i++){
+        if(temasEl[i] == temaSelecionado){
+            posTemaAtual = i;
+            temaAtual = temas[i];
+            atualiza.tema(temaAtual);
+        }
+    }
+
+    document.querySelector('#cor1').value = temaAtual.corPrimaria;
+    document.querySelector('#cor2').value = temaAtual.corSecundaria;
+    document.querySelector('#cor3').value = temaAtual.corContainer;
+
+};
+
+
+// CRIAÇÃO DE TEMA
 
 let adicionar_tema = (novo_tema) => {
 
@@ -151,16 +184,19 @@ let adicionar_tema = (novo_tema) => {
     let cor1El = document.createElement('div');
     cor1El.classList.add('display-cor');
     cor1El.classList.add('cor1');
+    cor1El.style.setProperty('background-color', novo_tema.corPrimaria);    // cor primário é a do fundo
     containerCoresEl.appendChild(cor1El);
 
     let cor2El = document.createElement('div');
     cor2El.classList.add('display-cor');
     cor2El.classList.add('cor2');
+    cor2El.style.setProperty('background-color', novo_tema.corSecundaria);  // cor secundária é a do texto
     containerCoresEl.appendChild(cor2El);
 
     let cor3El = document.createElement('div');
     cor3El.classList.add('display-cor');
     cor3El.classList.add('cor3');
+    cor3El.style.setProperty('background-color', novo_tema.corContainer);   // cor do container dos menus
     containerCoresEl.appendChild(cor3El);
 
     novoTemaEl.appendChild(containerCoresEl);
@@ -174,6 +210,57 @@ let adicionar_tema = (novo_tema) => {
     let containerSelecaoTemasEl = document.querySelector('#selecao-tema');
     let paiDoBotaoEl = document.querySelector('#container-botao-add-tema');
     containerSelecaoTemasEl.insertBefore(novoTemaEl, paiDoBotaoEl);
+
+    novoTemaEl.addEventListener('click', seleciona_tema_config);
+    temasEl.push(novoTemaEl);
+};
+
+$('#adicionar-tema').click(() => {
+    let novo_tema = {
+        corPrimaria: document.querySelector('#cor1').value,
+        corSecundaria: document.querySelector('#cor2').value,
+        corContainer: document.querySelector('#cor3').value
+    }
+
+    temas.push(novo_tema);
+
+    adicionar_tema(novo_tema)
+});
+
+let cria_temas_existentes = () => {
+    temas = storage.carregarTemas();
+    for(let tema of temas){
+        adicionar_tema(tema);
+    }
+};
+
+cria_temas_existentes();
+
+let muda_cor_input1 = (e) => {
+    let inputCor = e.currentTarget;
+    temas[posTemaAtual].corPrimaria = inputCor.value;
+    temaAtual.corPrimaria = inputCor.value;
+
+    atualiza.tema(temaAtual);
+    document.querySelector('.tema-selecionado .cor1').style.setProperty('background-color', temaAtual.corPrimaria);
+}
+let muda_cor_input2 = (e) => {
+    let inputCor = e.currentTarget;
+    temas[posTemaAtual].corSecundaria = inputCor.value;
+    temaAtual.corSecundaria = inputCor.value;
+
+    atualiza.tema(temaAtual);
+    document.querySelector('.tema-selecionado .cor2').style.setProperty('background-color', temaAtual.corSecundaria);
+}
+let muda_cor_input3 = (e) => {
+    let inputCor = e.currentTarget;
+    temas[posTemaAtual].corContainer = inputCor.value;
+    temaAtual.corContainer = inputCor.value;
+
+    atualiza.tema(temaAtual);
+    document.querySelector('.tema-selecionado .cor3').style.setProperty('background-color', temaAtual.corContainer);
 }
 
-$('#adicionar-tema').click(adicionar_tema);
+$('#cor1').change(muda_cor_input1);
+$('#cor2').change(muda_cor_input2);
+$('#cor3').change(muda_cor_input3);
