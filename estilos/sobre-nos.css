@@ -33,7 +33,6 @@ body {
 #botao-home:hover {
     cursor: pointer;
 }
-
 #container {
     grid-row: 2 / 3;
     grid-column: 2 / 3;;
@@ -46,3 +45,6 @@ body {
 #container p {
     margin: 0px;
 }
+
+/*          *************************** ESTILIZAÇÃO DAS CARTAS *********************             */
+/* usar classes (.carta-selecionada, .carta-lateral, .carta-traseira) para controlar as posições, fazer transições e colocar easter eggs */
