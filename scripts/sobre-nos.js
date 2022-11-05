@@ -11,9 +11,9 @@ let classes = [
     'carta-selecionada',
     'carta-direita',
     'carta-traseira',
-    'carta-traseira'
+    'carta-esquerda'
 ];
-let indice = 0;
+let indice = 12;
 
 function define_posicoes() {
     let containerEl = document.querySelector('#container');
@@ -41,15 +41,32 @@ function define_posicoes() {
 
 }
 
-define_posicoes();
-
-function gira_posicao() {
+function gira_classes() {
     document.querySelector('.carta-selecionada').classList.remove('carta-selecionada');
     document.querySelector('.carta-direita').classList.remove('carta-direita');
     document.querySelector('.carta-traseira').classList.remove('carta-traseira');
     document.querySelector('.carta-esquerda').classList.remove('carta-esquerda');
 
+    if(indice === 0) {indice = 12};
+
     for(let i = 0; i < cartas.length; i++){
-        cartas[i].classList.add(classes[(i+1)%cartas.length])
+        cartas[i].classList.add(classes[(i+indice)%cartas.length]);
     }
+
+
 }
+
+document.querySelector('#area-clicavel-esquerda').addEventListener('click', () => {
+    indice++;
+    gira_classes();
+});
+document.querySelector('#area-clicavel-direita').addEventListener('click', () => {
+    indice--;
+    gira_classes();
+});
+
+function teste(x) {
+    document.querySelector('.carta-selecionada').style.left = x + 'px';
+}
+
+alert('dps eu faço a transição pelo menos consegui fazer os bagulin mudar de lugar certo');

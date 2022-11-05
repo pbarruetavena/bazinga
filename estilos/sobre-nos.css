@@ -50,9 +50,27 @@ body {
     margin: auto;
     position: relative;
 
-    border: 1px var(--cor-texto) solid;
+    /* border: 1px var(--cor-texto) solid; */
 }
-
+#area-clicavel-esquerda {
+    /* background-color: #ffffff34; */
+    position: absolute;
+    height: 80%;
+    width: 20vw;
+    z-index: 10;
+    cursor: pointer;
+    top: 7vh;
+}
+#area-clicavel-direita {
+    /* background-color: #ffffff34; */
+    position: absolute;
+    height: 80%;
+    width: 20vw;
+    right: 0px;
+    z-index: 10;
+    cursor: pointer;
+    top: 7vh;
+}
 
 /*          *************************** ESTILIZAÇÃO DAS CARTAS *********************             */
 /* usar classes (.carta-selecionada, .carta-lateral, .carta-traseira) para controlar as posições, fazer transições e colocar easter eggs */
@@ -66,9 +84,8 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    transition: all 1000ms ease;
 
-    transition: left 4000ms ease;
-    transition: right 1000ms ease;
     position: absolute;
 }
 
@@ -76,6 +93,9 @@ body {
     width: 20vw;
     height: 45vh;
     min-width: 194px;
+    position: relative;
+    margin: auto;
+    top: 9vh;
 }
 .carta-selecionada .letra-min {
     display: none;
@@ -112,7 +132,14 @@ body {
     cursor: pointer;
     transform: translate(2px, 2px);
 }
-
+.carta-direita {
+    top: 21vh;
+    right: 3vw;
+}
+.carta-esquerda {
+    top: 21vh;
+    left: 3vw;
+}
 .carta-direita,
 .carta-esquerda {
     height: 20vh;
