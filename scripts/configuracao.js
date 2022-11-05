@@ -145,6 +145,18 @@ inputNomeEl.addEventListener('change', muda_nome);
 
 /*         ******************** SELEÇÃO DE TEMAS ***********************            */
 
+function iniciliza_tema_selecionado(){
+    let temaSelecionado = perfis[perfilAtual].tema;
+    temasEl[temaSelecionado].classList.add('tema-selecionado');
+
+    posTemaAtual = temaSelecionado;
+    temaAtual = temas[posTemaAtual];
+
+    document.querySelector('#cor1').value = temaAtual.corPrimaria;
+    document.querySelector('#cor2').value = temaAtual.corSecundaria;
+    document.querySelector('#cor3').value = temaAtual.corContainer;
+}
+
 // SELEÇÃO DE TEMA - CLICÁVEL
 
 let seleciona_tema_config = (e) => {
@@ -235,6 +247,7 @@ let cria_temas_existentes = () => {
 };
 
 cria_temas_existentes();
+iniciliza_tema_selecionado();
 
 let muda_cor_input1 = (e) => {
     let inputCor = e.currentTarget;
