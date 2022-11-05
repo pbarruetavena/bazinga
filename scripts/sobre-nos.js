@@ -70,3 +70,15 @@ function teste(x) {
 }
 
 alert('dps eu faço a transição pelo menos consegui fazer os bagulin mudar de lugar certo');
+
+/* ***** BOTÕES DAS CARTAS ******** */
+
+$('#github-site').click(() => window.open("https://github.com/pbarruetavena/bazinga", '_blank'));
+
+$('#email-pedro').click(() => window.location.href = "mailto:pbarruetavenavieira@gmail.com");
+$('#insta-pedro').click(() => window.open("https://www.instagram.com/pedrogabrielb.vieira/", '_blank'));
+$('#github-pedro').click(() => window.open("https://github.com/pbarruetavena", '_blank'));
+
+$('#github-rafael').click(() => open("https://github.com/rafael-igor-vilaca", '_blank'));
+
+$('#github-victor').click(() => open("https://github.com/VictorN77", '_blank'));
