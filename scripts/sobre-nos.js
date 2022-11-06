@@ -15,7 +15,7 @@ let classes = [
 ];
 let indice = 12;
 
-function define_posicoes() {
+function define_posicoes() { // função não utilizada
     let containerEl = document.querySelector('#container');
     let larguraCont = containerEl.clientWidth;
     let alturaCont = containerEl.clientHeight;
@@ -69,7 +69,6 @@ function teste(x) {
     document.querySelector('.carta-selecionada').style.left = x + 'px';
 }
 
-alert('dps eu faço a transição pelo menos consegui fazer os bagulin mudar de lugar certo');
 
 /* ***** BOTÕES DAS CARTAS ******** */
 
