@@ -333,11 +333,29 @@ $('#cor3').change(muda_cor_input3);
 
 /* **** SELEÇÃO DE TEMAS PRÉ-DEFINIDOS ******* */
 
+let temasPreDefinidos = [
+    {
+        
+        corPrimaria: "#171616",
+        corSecundaria: "#ffffff",
+        corContainer: "#2d2b2b"
+    }
+];
+let temasPreDefinidosEl = document.querySelectorAll('.post-tema-predefinido');
+
 function abre_temas_predefinidos(){
     $('#selecao-tema-predefinido').css({display: "flex"});
 }
 function fecha_temas_predefinidos(){
     $('#selecao-tema-predefinido').css({display: "none"});
+}
+
+for(let i = 0; i < temasPreDefinidosEl.length; i++) {
+    temasPreDefinidosEl[i].addEventListener('click', () => {
+        temasEl.push(temasPreDefinidos[i]);
+        adicionar_tema(temasPreDefinidos[i]);
+        fecha_temas_predefinidos();
+    });
 }
 
 $('#tema-predefinido').click(abre_temas_predefinidos);
