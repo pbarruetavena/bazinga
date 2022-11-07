@@ -27,7 +27,7 @@ body{
 
 #configuracao,
 #secao-ajuda {
-    box-shadow: 24px 23px 17px var(--cor-fundo-container);
+    box-shadow: 12px 11px 17px var(--cor-fundo-container);
 }
 
 #icone-configuracao{

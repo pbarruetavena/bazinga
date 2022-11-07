@@ -330,3 +330,17 @@ let muda_cor_input3 = (e) => {
 $('#cor1').change(muda_cor_input1);
 $('#cor2').change(muda_cor_input2);
 $('#cor3').change(muda_cor_input3);
+
+/* **** SELEÇÃO DE TEMAS PRÉ-DEFINIDOS ******* */
+
+function abre_temas_predefinidos(){
+    $('#selecao-tema-predefinido').css({display: "flex"});
+}
+function fecha_temas_predefinidos(){
+    $('#selecao-tema-predefinido').css({display: "none"});
+}
+
+$('#tema-predefinido').click(abre_temas_predefinidos);
+$('#botao-fechar-temas-predefinidos').click(fecha_temas_predefinidos);
+
+fecha_temas_predefinidos();
