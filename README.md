@@ -39,6 +39,6 @@ O jogo conta com alguns adicionais como personalização. É possível adicionar
 
 ## Easter Egg
 
-Em breve...
+Em breve... (mas posso adiantar que vai ter a ver com o sobre nós 🤫)
 
-> Me segue no [insta](https://www.instagram.com/pedrogabrielb.vieira/)
+> Me segue no [insta](https://www.instagram.com/pedrogabrielb.vieira/) e no [github](https://github.com/pbarruetavena)
