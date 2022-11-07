@@ -81,3 +81,12 @@ $('#github-pedro').click(() => window.open("https://github.com/pbarruetavena", '
 $('#github-rafael').click(() => open("https://github.com/rafael-igor-vilaca", '_blank'));
 
 $('#github-victor').click(() => open("https://github.com/VictorN77", '_blank'));
+
+
+/* ******* EASTER EGGS *********** */
+
+const botoesLikeArr = document.querySelectorAll('.like');
+
+for(let likeBtn of botoesLikeArr){
+    likeBtn.addEventListener('click', () => {likeBtn.classList.toggle('curtido');});
+}

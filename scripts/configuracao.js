@@ -4,6 +4,54 @@ let temasEl = [];
 
 let tema_selecionado;
 
+let posImagem = 0;
+let imagensDePerfil = [
+    'user-spock.png',
+    'user-pedra.png',
+    'user-papel.png',
+    'user-tesoura.png',
+    'user-lagarto.png'
+];
+
+const adicionarPerfilBtn = document.querySelector('#adicionar-perfil');
+const containerPerfisEl = document.querySelector('#secao-selecao-perfil');
+/* **** Apagar perfil e temas ******** */
+
+function deleta_perfil() {
+
+    if(perfis.length === 1){
+        console.log('ERRO IMPOSSÍVEL APAGAR PERFIL QUANDO SÓ HÁ UM');
+        return;
+    }
+
+    perfisEl[perfilAtual].remove();
+    perfisEl.splice(perfilAtual, 1);
+    perfis.splice(perfilAtual, 1);
+
+    perfilAtual--;
+
+    iniciliza_perfil_selecionado();
+}
+
+$('#deletar-perfil').click(deleta_perfil);
+
+function deleta_tema() {
+    if(temas.length === 1) {
+        return;
+    }
+
+    temasEl[posTemaAtual].remove();
+    temasEl.splice(posTemaAtual, 1);
+    temas.splice(posTemaAtual, 1);
+    
+    posTemaAtual--;
+    if(posTemaAtual === -1){
+        posTemaAtual = 0;
+    }
+
+    iniciliza_tema_selecionado(posTemaAtual);
+}
+
 //selecao de perfil
 
 function seleciona_perfil_config(e){
@@ -23,12 +71,11 @@ function seleciona_perfil_config(e){
 
     document.querySelector('#input-nome').value = perfis[perfilAtual].nome;
     document.querySelector('#imagem-selecionada').src = 'imagens/' + perfis[perfilAtual].imagem;
+    posImagem = -1;
 }
 
 
 // adicionar perfil
-const adicionarPerfilBtn = document.querySelector('#adicionar-perfil');
-const containerPerfisEl = document.querySelector('#secao-selecao-perfil');
 
 let adicionar_perfil = (novo_perfil) => {
 
@@ -99,20 +146,15 @@ function iniciliza_perfil_selecionado(){
     
     let perfil_selecionado = perfisEl[perfilAtual];
     perfil_selecionado.classList.add('perfil-selecionado');
+    document.querySelector('#input-nome').value = perfis[perfilAtual].nome;
+    document.querySelector('#imagem-selecionada').src = 'imagens/' + perfis[perfilAtual].imagem;
+    atualiza.perfil(perfis[perfilAtual]);
 }
 
 iniciliza_perfil_selecionado();
 
 /*      TROCA DE IMAGEM     */
-let imagensDePerfil = [
-    'user-spock.png',
-    'user-pedra.png',
-    'user-papel.png',
-    'user-tesoura.png',
-    'user-lagarto.png'
-];
 
-let posImagem = 0;
 
 function troca_imagem_de_perfil(){
     posImagem = (posImagem + 1) % imagensDePerfil.length;
@@ -145,17 +187,18 @@ inputNomeEl.addEventListener('change', muda_nome);
 
 /*         ******************** SELEÇÃO DE TEMAS ***********************            */
 
-function iniciliza_tema_selecionado(){
-    let temaSelecionado = perfis[perfilAtual].tema;
+function iniciliza_tema_selecionado(temaSelecionado){
     temasEl[temaSelecionado].classList.add('tema-selecionado');
 
     posTemaAtual = temaSelecionado;
     temaAtual = temas[posTemaAtual];
+    atualiza.tema(temaAtual);
 
     document.querySelector('#cor1').value = temaAtual.corPrimaria;
     document.querySelector('#cor2').value = temaAtual.corSecundaria;
     document.querySelector('#cor3').value = temaAtual.corContainer;
 }
+
 
 // SELEÇÃO DE TEMA - CLICÁVEL
 
@@ -217,6 +260,7 @@ let adicionar_tema = (novo_tema) => {
     botaoApagarNovoTemaEl.classList.add('botao-conf');
     botaoApagarNovoTemaEl.classList.add('apagar');
     botaoApagarNovoTemaEl.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+    botaoApagarNovoTemaEl.addEventListener('click', deleta_tema);
     novoTemaEl.appendChild(botaoApagarNovoTemaEl);
 
     let containerSelecaoTemasEl = document.querySelector('#selecao-tema');
@@ -247,7 +291,16 @@ let cria_temas_existentes = () => {
 };
 
 cria_temas_existentes();
-iniciliza_tema_selecionado();
+
+function inicia_tema(){
+    let temaSelecionado = JSON.parse(localStorage.getItem('pos-tema-atual'));
+    if(temaSelecionado == null){
+        temaSelecionado = 0;
+    }
+    iniciliza_tema_selecionado(temaSelecionado);
+}
+inicia_tema();
+
 
 let muda_cor_input1 = (e) => {
     let inputCor = e.currentTarget;

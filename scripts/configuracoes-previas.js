@@ -72,6 +72,15 @@ let storage = {
         return posicao_perfil_atual;
     },
 
+    carregarPosTemaAtual: () => {
+        let temaSelecionado = JSON.parse(localStorage.getItem('pos-tema-atual'));
+        if(temaSelecionado == null){
+            temaSelecionado = 0;
+        }
+
+        return temaSelecionado;
+    },
+
     salvarPerfil: () => {
         localStorage.setItem('perfil-atual', perfilAtual);
         localStorage.setItem('perfis', JSON.stringify(perfis));
@@ -110,13 +119,14 @@ let atualiza = {
 
 function inicializar(){
     perfis = storage.carregarPerfil();
-    let perfilAtual = storage.carregaPosPerfilAtual();
+    perfilAtual = storage.carregaPosPerfilAtual();
 
     atualiza.perfil(perfilAtual);
 
-    let posTemaAtual = perfilAtual.tema;
+    posTemaAtual = storage.carregarPosTemaAtual();
     temas = storage.carregarTemas;
     temaAtual = temas[posTemaAtual];
 
     atualiza.tema(temaAtual);
+    atualiza.perfil(perfis[perfilAtual]);
 }

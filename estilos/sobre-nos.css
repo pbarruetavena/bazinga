@@ -185,3 +185,11 @@ body {
         top: 25vh;
     }
 }
+
+/* ****** easter eggs ***** */
+
+.curtido {
+    background-color: var(--cor-texto) !important;
+    color: var(--cor-fundo) !important;
+    border-color: var(--cor-fundo) !important;
+}
