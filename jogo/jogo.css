@@ -10,3 +10,21 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
 }
+
+img {
+    height: 75px;
+    margin-top: 10px;
+}
+
+main{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+#container-cartas-na-mesa {
+    height: 325px;
+    border: solid 8px;
+    border-color: white;
+    border-radius: 10%;
+    box-shadow: 5px 5px 5px 5px gray;
+}
