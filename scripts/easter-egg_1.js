@@ -1,0 +1,1 @@
+$('#voltar').click(() => location.href  = 'sobre-nos.html');
