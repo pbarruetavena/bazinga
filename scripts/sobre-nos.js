@@ -90,3 +90,5 @@ const botoesLikeArr = document.querySelectorAll('.like');
 for(let likeBtn of botoesLikeArr){
     likeBtn.addEventListener('click', () => {likeBtn.classList.toggle('curtido');});
 }
+
+$('#linkEasterEgg_1').click(() => open('easter-egg_1.html', '_blank'));
