@@ -3,4 +3,10 @@
     --cor-texto: #ffffff;
     --cor-hover: rgba(255, 255, 255, 0.253);
     --cor-erro: rgb(138, 2, 2);
+    --cor-fundo: #171616;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
