@@ -10,25 +10,25 @@
 </head>
 
 <body>
-    <header>
-        <i id="icone-pause" class="fa fa-pause" aria-hidden="true"></i>
-        <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i><!--sobre-nós: vai estar 
-            dentro do pause quando você clica nele(tá aqui temporário)-->
-    </header>
+    
+
+    <i id="icone-pause" class="fa fa-pause" aria-hidden="true"></i>
+    <!-- <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i>      sobre-nós: vai estar dentro do pause quando você clica nele(tá aqui temporário)-->
     <main> 
-        <div id = "Bot-dados">
-        <img src="../imagens/imagem-user" alt="Imagem de perfil do Bot">    
+        <section id ="container-dados-bot">
+            <img src="../imagens/user-spock.png" alt="Imagem de perfil do Bot">
             <p>Bot Spock</p>
-            
+        </section>
+
+        <section id="container-cartas-bot"></section>
         
-        </div>
-        
-        <div id = "Jogador-dados">
-            <img src="../imagens/imagem-user" alt="Imagem de perfil do Bot">     
+        <section id="container-dados-jogador">
+            <img src="../imagens/user-lagarto.png" alt="Imagem de perfil do Bot">     
             <p>Anônimo</p>
-        </div>
-        <img src="../baralho/carta-spock-modelo.png" id="carta">
-    </main>    
+        </section>
+
+        <section id="container-cartas-jogador"></section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="dinamica-jogo.js"></script>
 </body>
