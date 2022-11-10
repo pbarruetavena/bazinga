@@ -15,21 +15,32 @@
         <i id="icone-pause" class="fa fa-pause" aria-hidden="true"></i>
         <!-- <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i>      sobre-nós: vai estar dentro do pause quando você clica nele(tá aqui temporário)-->
 
-            <section id="container-dados-bot">
+        <main id="container-tela-jogo">
+            <section id="container-dados-bot" class="containers-perfis">
                 <img src="../imagens/user-spock.png" class="imagem-perfil-jg" alt="Imagem de perfil do Bot">
-                <p>Bot Spock</p>
+                <div id="nome-pont-bot">
+                    <p id="nome-bot">Bot Spock</p>
+                    <p id="pontuacao-bot">0 pts</p>
+                </div>
             </section>
 
             <section id="container-cartas-bot"></section>
             
-            <section id="container-dados-jogador">
+            <section id="container-cartas-na-mesa"></section>
+
+            <section id="container-dados-jogador" class="containers-perfis">
                 <img src="../imagens/user-lagarto.png" class="imagem-perfil-jg" alt="Imagem de perfil do Jogador">     
-                <p>Anônimo</p>
+                <div id="nome-pont-jogador">
+                    <p id="nome-jogador">Bot Spock</p>
+                    <p id="pontuacao-jogador">0 pts</p>
+                </div>
             </section>
-            
-        <section id="container-cartas-na-mesa"></section>
-            
-        <section id="container-cartas-jogador"></section>
+                
+            <section id="container-cartas-jogador">
+
+                <div id="j1" class="carta"></div>
+            </section>
+        </main>
 
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <script src="dinamica-jogo.js"></script>
