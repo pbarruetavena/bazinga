@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bazinga | Jogar</title>
-    <link rel="icon" href="../imagens/icone-manete.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="jogo.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bazinga | Jogar</title>
+        <link rel="icon" href="../imagens/icone-manete.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="jogo.css">
+    </head>
 
-<body>
-    
-
-    <i id="icone-pause" class="fa fa-pause" aria-hidden="true"></i>
-    <!-- <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i>      sobre-nós: vai estar dentro do pause quando você clica nele(tá aqui temporário)-->
-    <main> 
-        <section id ="container-dados-bot">
-            <img src="../imagens/user-spock.png" alt="Imagem de perfil do Bot">
-            <p>Bot Spock</p>
-        </section>
-
-        <section id="container-cartas-bot"></section>
+    <body>
         
-        <section id="container-dados-jogador">
-            <img src="../imagens/user-lagarto.png" alt="Imagem de perfil do Jogador">     
-            <p>Anônimo</p>
-        </section>
-        
+
+        <i id="icone-pause" class="fa fa-pause" aria-hidden="true"></i>
+        <!-- <i id="icone-sobre" class="fa fa-info-circle" aria-hidden="true"></i>      sobre-nós: vai estar dentro do pause quando você clica nele(tá aqui temporário)-->
+
+            <section id="container-dados-bot">
+                <img src="../imagens/user-spock.png" class="imagem-perfil-jg" alt="Imagem de perfil do Bot">
+                <p>Bot Spock</p>
+            </section>
+
+            <section id="container-cartas-bot"></section>
+            
+            <section id="container-dados-jogador">
+                <img src="../imagens/user-lagarto.png" class="imagem-perfil-jg" alt="Imagem de perfil do Jogador">     
+                <p>Anônimo</p>
+            </section>
+            
         <section id="container-cartas-na-mesa"></section>
-        
+            
         <section id="container-cartas-jogador"></section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="dinamica-jogo.js"></script>
-</body>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script src="dinamica-jogo.js"></script>
+    </body>
 
 </html>
