@@ -178,7 +178,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 80% 1fr;
-    grid-template-rows: 5fr 2fr;
     border: 1px var(--cor-texto) solid;
     border-radius: 10px;
     background-color: var(--cor-fundo-container);
@@ -186,7 +185,6 @@
 #contem-fechar-ajuda {
     padding: 10px;
     grid-column: 3 / 4;
-    grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -202,22 +200,27 @@
     color: var(--cor-texto);
     border-radius: 10em;
 }
+#fechar-ajuda:hover {
+    cursor: pointer;
+    transform: translate(2px, 2px);
+}
 #container-ajuda {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    margin-bottom: 3px;
+    margin-bottom: auto;
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     height: 90%;
     width: 100%;
-    border: 1px var(--cor-texto) solid;
     overflow-y: auto;
     overflow-x: hidden;
 }
-#container-ajuda h3,
-#container-ajuda p {
+#container-ajuda h3 {
     text-align: center;
+}
+#container-ajuda p {
+    text-align: justify;
 }
 #container-ajuda h3 {
     margin-top: 12px;
@@ -230,41 +233,16 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#interacao-ajuda {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+#contem-hierarquia-naipes {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-}
-#mensagem-ajuda {
-    margin: 3px;
-}
-#controles-ajuda {
-    display: flex;
-    flex-direction: row;
-    gap: 6px;
-    justify-content: center;
     align-items: center;
 }
-#controles-ajuda button {
-    font-size: 15px;
-    padding: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: var(--cor-texto) 1px solid;
-    background-color: inherit;
-    color: var(--cor-texto);
-    border-radius: 100%;
+#contem-hierarquia-naipes ul {
+    align-self: flex-start;
+    padding-left: 60px;
 }
-#menu-ajuda button:hover {
-    cursor: pointer;
-    position: relative;
-    top: 2px;
-    left: 2px;
-}
+
 @media (max-width: 600px) {
     #secao-ajuda {
         margin-left: 15px;
