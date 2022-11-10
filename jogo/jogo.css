@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); /* fonte para carta */
+
 :root {
     --cor-fundo-container: #2d2b2b;
     --cor-texto: #ffffff;
@@ -53,6 +55,13 @@ body {
 #container-cartas-bot {
     grid-row: 1 / 2;
     grid-column: 1 / 4;
+
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }
 
 #container-dados-jogador {
@@ -69,17 +78,68 @@ body {
     grid-column: 3 / 6;
     grid-row: 3 / 4;
 
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }
 .carta {
     height: 100%; /* TESTE */
-    width: 72px;
+    box-sizing: border-box;
+    width: 82px;
     border-radius: 10px;
-    background-color: rgba(240, 248, 255, 0.361);
-}
-#j1 {
-    background-image: url(../imagens/user-spock.png);
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0px;
+}
+.numero-carta {
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+.num-inf {
+    align-self: flex-end;
+}
+
+#j1 {
+    background-image: url(../imagens/user-spock.png);
+}
+#j2 {
+    background-image: url(../imagens/user-pedra.png);
+}
+#j3 {
+    background-image: url(../imagens/user-tesoura.png);
+}
+#j4 {
+    background-image: url(../imagens/user-lagarto.png);
+}
+
+#b1 {
+    background-image: url(../imagens/user-pedra.png);
+}
+#b2 {
+    background-image: url(../imagens/user-papel.png);
+}
+#b3 {
+    background-image: url(../imagens/user-spock.png);
+}
+#b4 {
+    background-image: url(../imagens/user-pedra.png);
+}
+
+#container-cartas-jogador .carta:hover {
+    cursor: pointer;
+    transform: translateY(5px);
+    transform: scale(1.1, 1.1);
 }
