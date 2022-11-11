@@ -6,9 +6,36 @@
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+
 }
 
 #titulo{
-
+    align-self: flex-start;
    color: rgb(226, 43, 43);
+}
+
+#voltar{
+    height: 70px;
+    width: 80px;
+}
+#martelo{
+
+    height: 200px;
+    width: 220px;
+    
+    
+}
+
+#teste-forca{
+    float: right;
+
+}
+#minigame{
+    grid-column: auto;
+    align-items: center;
 }
