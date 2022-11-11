@@ -245,7 +245,10 @@
 
 @media (max-width: 600px) {
     #secao-ajuda {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #menu-ajuda {
+        height: 60vh;
     }
 }

@@ -147,6 +147,7 @@ body {
     height: 20vh;
     width: 10vw;
 }
+
 .carta-direita .letra-min,
 .carta-esquerda .letra-min {
     margin: 0px;
@@ -154,6 +155,8 @@ body {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
+.carta-direita #linkEasterEgg_1,
+.carta-esquerda #linkEasterEgg_1,
 .carta-direita .nome-carta,
 .carta-esquerda .nome-carta,
 .carta-direita .descricao-carta,

@@ -53,14 +53,17 @@ let storage = {
 
         ranking = JSON.parse(localStorage.getItem('ranking'));
 
-        if(ranking.length == 0 || ranking == null){
+        if(ranking == null){
+            ranking = [];
             ranking.push(
                 {
-                    usuario: 1,
+                    usuario: 0,
                     pontuacao: 0
                 }
             );
         }
+
+        return ranking;
     },
     
     carregaPosPerfilAtual: () => {
