@@ -16,7 +16,9 @@ body {
 
 #titulo{
     align-self: flex-start;
-   color: rgb(226, 43, 43);
+    color: rgb(226, 43, 43);
+    font-size: 45px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #voltar{
@@ -29,6 +31,24 @@ body {
     width: 220px;
     
     
+}
+
+#martelo:hover {
+    cursor: pointer;
+    position: relative;
+    transform: rotateX(180deg);
+    animation: crescer 1s ease-in-out 0s infinite alternate,
+                girando 1.1s ease-in-out 0s infinite alternate;
+}
+
+@keyframes crescer {
+    from{transform: scale(1);}
+    to{transform: scale(1.2);}
+  }
+
+@keyframes girando{
+    from{transform: rotate(100deg);}
+    to{transform: rotate(-45deg);}
 }
 
 #teste-forca{
