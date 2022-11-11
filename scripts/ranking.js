@@ -1,7 +1,8 @@
 
 ranking = storage.carregarRanking();
 let rankingEl = [];
-let quantidade_registros = 10;
+let registro_atual = 0;
+let quantidade_registros = 0;
 
 function cria_elemento_registro(registro) {
 
@@ -38,6 +39,39 @@ function cria_elemento_registro(registro) {
     rankingEl.push(novo_registro_el);
 }
 
-for(let registro of ranking){
-    cria_elemento_registro(registro);
+for(let i = 0; i < ranking.length && i < 10; i++){
+    cria_elemento_registro(ranking[i]);
+    registro_atual = i;
+    quantidade_registros++;
+}
+
+$('#expandir-minimizar-ranking').click(() => {
+    if(ranking.length <= quantidade_registros){
+        return;
+    } else {
+        let aux = quantidade_registros + 10;
+        for(let i = registro_atual; i < ranking.length && i < aux; i++){
+            cria_elemento_registro(ranking[i]);
+            registro_atual = i;
+        }
+        quantidade_registros = registro_atual++;
+    }
+});
+
+
+let metodo_teste = {
+    adiciona_registro_obj: function(user, pont) {
+        ranking.push({
+            usuario: user,
+            pontuacao: pont
+        });
+    },
+    adiciona_x_registro_obj: function(x, user, pont) {
+        for(let i = 0; i < x; i++){
+            ranking.push({
+                usuario: user,
+                pontuacao: pont
+            });
+        }
+    } 
 }
