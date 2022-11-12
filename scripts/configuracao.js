@@ -44,6 +44,25 @@ function deleta_perfil() {
 
 $('#deletar-perfil').click(deleta_perfil);
 
+function seleciona_tema_sec(n) {
+    for(let tema of temasEl){
+        tema.classList.remove('tema-selecionado');
+    }
+
+    let temaSelecionado = temasEl[n];
+    temaSelecionado.classList.add('tema-selecionado');
+
+
+    posTemaAtual = n;
+    temaAtual = temas[n];
+    atualiza.tema(temaAtual);
+
+
+    document.querySelector('#cor1').value = temaAtual.corPrimaria;
+    document.querySelector('#cor2').value = temaAtual.corSecundaria;
+    document.querySelector('#cor3').value = temaAtual.corContainer;
+}
+
 function deleta_tema() {
     if(temas.length === 1) {
         return;
@@ -59,6 +78,7 @@ function deleta_tema() {
     }
 
     iniciliza_tema_selecionado(posTemaAtual);
+    seleciona_tema_sec(posTemaAtual);
 }
 
 //selecao de perfil
@@ -365,24 +385,7 @@ for(let i = 0; i < temasPreDefinidosEl.length; i++) {
         adicionar_tema(temasPreDefinidos[i]);
         fecha_temas_predefinidos();
 
-        for(let tema of temasEl){
-            tema.classList.remove('tema-selecionado');
-        }
-    
-        let temaSelecionado = temasEl[temasEl.length - 1];
-        temaSelecionado.classList.add('tema-selecionado');
-    
-        for(let i = 0; i < temasEl.length; i++){
-            if(temasEl[i] == temaSelecionado){
-                posTemaAtual = i;
-                temaAtual = temas[i];
-                atualiza.tema(temaAtual);
-            }
-        }
-    
-        document.querySelector('#cor1').value = temaAtual.corPrimaria;
-        document.querySelector('#cor2').value = temaAtual.corSecundaria;
-        document.querySelector('#cor3').value = temaAtual.corContainer;
+        seleciona_tema_sec(temasEl.length - 1);
     });
 }
 

@@ -55,12 +55,6 @@ let storage = {
 
         if(ranking == null){
             ranking = [];
-            ranking.push(
-                {
-                    usuario: 0,
-                    pontuacao: 0
-                }
-            );
         }
 
         return ranking;
