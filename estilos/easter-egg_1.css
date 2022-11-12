@@ -58,6 +58,9 @@ body {
 
 #teste-forca{
     float: right;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 
 }
 #minigame{
@@ -67,12 +70,17 @@ body {
 
 #indicador{
 
-    height: 4vw;
-    animation: subir-descer 2s infinite;
+    height: 50px;
+    padding: 6em;
+    animation: subir-descer linear 2s infinite;
+    position: relative;
 }
 @keyframes subir-descer{
-    from {top: 0px;}
-  to {top: 200px; /*so um teste*/}
+    0% {top: 0vw;}
+  25% {top: -10vw;}
+  50% {top: -20vw;}
+  75% {top: -10vw;}
+  100% {top: 0vw;}
 }
 #texto{
     display: inline-block;
