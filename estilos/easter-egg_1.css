@@ -6,6 +6,10 @@
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+}
+
+#fluxo {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +28,7 @@ body {
 #voltar{
     height: 70px;
     width: 80px;
+    float: left;
 }
 #martelo{
 
@@ -58,4 +63,19 @@ body {
 #minigame{
     grid-column: auto;
     align-items: center;
+}
+
+#indicador{
+
+    height: 4vw;
+    animation: subir-descer 2s infinite;
+}
+@keyframes subir-descer{
+    from {top: 0px;}
+  to {top: 200px; /*so um teste*/}
+}
+#texto{
+    display: inline-block;
+    height: 70%;
+    width: 25%;
 }
