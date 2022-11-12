@@ -84,7 +84,7 @@ let storage = {
     },
 
     salvarTemas: () => {
-
+        localStorage.setItem('pos-tema-atual', posTemaAtual);
         localStorage.setItem('temas', JSON.stringify(temas));
 
     },
@@ -121,9 +121,10 @@ function inicializar(){
     atualiza.perfil(perfilAtual);
 
     posTemaAtual = storage.carregarPosTemaAtual();
-    temas = storage.carregarTemas;
+    temas = storage.carregarTemas();
     temaAtual = temas[posTemaAtual];
 
     atualiza.tema(temaAtual);
     atualiza.perfil(perfis[perfilAtual]);
 }
+

@@ -92,3 +92,11 @@ for(let likeBtn of botoesLikeArr){
 }
 
 $('#linkEasterEgg_1').click(() => location.href  = 'easter-egg_1.html');
+
+
+posTemaAtual = storage.carregarPosTemaAtual();
+temas = storage.carregarTemas();
+temaAtual = temas[posTemaAtual];
+
+atualiza.tema(temaAtual);
+atualiza.perfil(perfis[perfilAtual]);

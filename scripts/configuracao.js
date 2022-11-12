@@ -393,3 +393,12 @@ $('#tema-predefinido').click(abre_temas_predefinidos);
 $('#botao-fechar-temas-predefinidos').click(fecha_temas_predefinidos);
 
 fecha_temas_predefinidos();
+
+
+function salvar() {
+    storage.salvarPerfil();
+    storage.salvarTemas();
+    storage.salvarRanking();
+}
+
+$('#salvar').click(salvar);
