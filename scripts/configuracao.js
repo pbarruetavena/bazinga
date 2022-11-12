@@ -28,9 +28,18 @@ function deleta_perfil() {
     perfisEl.splice(perfilAtual, 1);
     perfis.splice(perfilAtual, 1);
 
-    perfilAtual--;
 
     iniciliza_perfil_selecionado();
+
+    for(let i = 0; i < ranking.length; i++){
+        if(ranking[i].usuario == perfilAtual){
+            ranking.splice(i, 1);
+            rankingEl[i].remove();
+            rankingEl.splice(i, 1);
+        }
+    }
+
+    perfilAtual--;
 }
 
 $('#deletar-perfil').click(deleta_perfil);
@@ -352,9 +361,28 @@ function fecha_temas_predefinidos(){
 
 for(let i = 0; i < temasPreDefinidosEl.length; i++) {
     temasPreDefinidosEl[i].addEventListener('click', () => {
-        temasEl.push(temasPreDefinidos[i]);
+        temas.push(temasPreDefinidos[i]);
         adicionar_tema(temasPreDefinidos[i]);
         fecha_temas_predefinidos();
+
+        for(let tema of temasEl){
+            tema.classList.remove('tema-selecionado');
+        }
+    
+        let temaSelecionado = temasEl[temasEl.length - 1];
+        temaSelecionado.classList.add('tema-selecionado');
+    
+        for(let i = 0; i < temasEl.length; i++){
+            if(temasEl[i] == temaSelecionado){
+                posTemaAtual = i;
+                temaAtual = temas[i];
+                atualiza.tema(temaAtual);
+            }
+        }
+    
+        document.querySelector('#cor1').value = temaAtual.corPrimaria;
+        document.querySelector('#cor2').value = temaAtual.corSecundaria;
+        document.querySelector('#cor3').value = temaAtual.corContainer;
     });
 }
 
