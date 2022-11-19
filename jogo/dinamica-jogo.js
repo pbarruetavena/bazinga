@@ -67,7 +67,7 @@ function compara_carta(c1, c2){
     return 0;
 }
 
-function embaralha(){
+function embaralha_vet(){
     let naipes = ['R', 'P', 'T', 'L', 'S'];
     let valores = ['A', 2, 3, 4, 5, 6, 7];
 
@@ -106,12 +106,45 @@ function embaralha(){
     return cartas_mao;
 }
 
+function da_carta(){
+    let cartas_mao = embaralha_vet();
+
+    for(let i = 0; i < cartas_mao.length; i++){
+        cartasEl[i].childNodes[1].innerHTML = cartas_mao[i].valor;
+        cartasEl[i].childNodes[3].innerHTML = cartas_mao[i].valor;
+
+        let naipe;
+        switch(cartas_mao[i].naipe){
+            case 'R': 
+                naipe = 'pedra'; 
+                break;
+
+            case 'P': 
+                naipe = 'papel'; 
+                break;
+
+            case 'T': 
+                naipe = 'tesoura'; 
+                break;
+
+            case 'L': 
+                naipe = 'lagarto'; 
+                break;
+            case 'S': 
+                naipe = 'spock'; 
+                break;
+        }
+        cartasEl[i].style.backgroundImage = `url(../imagens/user-${naipe}.png)`;
+    }
+}
+
+da_carta();
 
 for(let carta of cartasEl) {
     carta.addEventListener('click', (e) => {
         carta.style.position = "absolute";
-        carta.style.left = "20" + "vw";
-        carta.style.top = "20" + "vh";
+        carta.style.left = "40" + "vw";
+        carta.style.top = "40" + "vh";
     });
 }
 
