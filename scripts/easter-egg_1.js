@@ -1,11 +1,18 @@
 //$('#voltar').click(() => location.href  = 'sobre-nos.html');
 
 let indEl = document.querySelector('#indicador');
-let martEl = document.querySelector('#martelo');
+let marteloEl = document.querySelector('#martelo');
 
-martEl.addEventListener('click', function(){
+marteloEl.addEventListener('click', function(){
     let rect = indEl.getBoundingClientRect();
 
 
+});
+
+//  Alterna classe quando clicado o martelo
+//  Mudei o nome pra marteloEl, ao invés de martEl
+
+marteloEl.addEventListener('click', function(e){
+    marteloEl.classList.toggle('marteloClicado');
 });
 

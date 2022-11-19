@@ -37,22 +37,26 @@ body {
 #martelo{
     height: 12vw;
     width: 13vw;
+    position: relative;
 }
 
 #martelo:hover {
     cursor: pointer;
-    position: relative;
+}
+
+/*    --------------- Classe criada para quando o martelo for clicado ---------------    */
+.marteloClicado {
     transform: rotateX(180deg);
     animation: crescer 1s ease-in-out 0s infinite alternate,
                 girando 1.1s ease-in-out 0s infinite alternate;
-}
 
+}
 @keyframes crescer {
     from{transform: scale(1);}
-    to{transform: scale(1.2);}
+    to{transform: scale(1.3);}
   }
 
-@keyframes girando{
+@keyframes girando {
     from{transform: rotate(100deg);}
     to{transform: rotate(-45deg);}
 }
@@ -90,7 +94,7 @@ body {
     font-size: 2em;
 }
 #niv{
-    float: right;
+    float: left;
     font-size: 2em;
 
 }
