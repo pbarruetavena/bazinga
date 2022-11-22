@@ -1,4 +1,6 @@
 let cartasEl = document.querySelectorAll('.carta');
+let cartasJogadorEl = document.querySelectorAll('#container-cartas-jogador .carta');
+let estagioJogo = 0; 
 
 function jogadorVencedor(cartaJogador, valorJogador, cartaBot, valorBot){
     const playerVictory = 1;
@@ -109,7 +111,7 @@ function embaralha_vet(){
 function da_carta(){
     let cartas_mao = embaralha_vet();
 
-    for(let i = 0; i < cartas_mao.length; i++){
+    for(let i = 4; i < cartas_mao.length; i++){
         cartasEl[i].childNodes[1].innerHTML = cartas_mao[i].valor;
         cartasEl[i].childNodes[3].innerHTML = cartas_mao[i].valor;
 
@@ -138,14 +140,28 @@ function da_carta(){
     }
 }
 
-da_carta();
+function move_carta(e){
+    e.currentTarget.style.position = "absolute";
+    e.currentTarget.style.left = "40" + "vw";
+    e.currentTarget.style.top = "40" + "vh";
+}
 
-for(let carta of cartasEl) {
-    carta.addEventListener('click', (e) => {
-        carta.style.position = "absolute";
-        carta.style.left = "40" + "vw";
-        carta.style.top = "40" + "vh";
-    });
+function libera_cartas(){
+    for(let carta of cartasJogadorEl) {
+        carta.addEventListener('click', move_carta);
+    }
+}
+
+function trava_cartas(){
+    for(let carta of cartasJogadorEl){
+        carta.removeEventListener('click', move_carta);
+    }
+}
+
+function jogar_init(){
+    da_carta();
+    libera_cartas();
+
 }
 
 
