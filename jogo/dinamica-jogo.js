@@ -1,4 +1,5 @@
 let cartasEl = document.querySelectorAll('.carta');
+let cartas = [];
 let cartasJogadorEl = document.querySelectorAll('#container-cartas-jogador .carta');
 let estagioJogo = 0; 
 
@@ -109,14 +110,14 @@ function embaralha_vet(){
 }
 
 function da_carta(){
-    let cartas_mao = embaralha_vet();
+    cartas = embaralha_vet();
 
-    for(let i = 4; i < cartas_mao.length; i++){
-        cartasEl[i].childNodes[1].innerHTML = cartas_mao[i].valor;
-        cartasEl[i].childNodes[3].innerHTML = cartas_mao[i].valor;
+    for(let i = 4; i < cartas.length; i++){
+        cartasEl[i].childNodes[1].innerHTML = cartas[i].valor;
+        cartasEl[i].childNodes[3].innerHTML = cartas[i].valor;
 
         let naipe;
-        switch(cartas_mao[i].naipe){
+        switch(cartas[i].naipe){
             case 'R': 
                 naipe = 'pedra'; 
                 break;
@@ -140,10 +141,19 @@ function da_carta(){
     }
 }
 
+function jogada(n1){
+    cartaJogada = cartas[n1];
+    let nb = gera_int_exlusive(4);
+    cartaBot = cartas[nb];
+    cartasEl[nb].style.backgroundImage = `url(../imagens/user-${cartaBot.naipe}.png)`;
+}
+
 function move_carta(e){
     e.currentTarget.style.position = "absolute";
     e.currentTarget.style.left = "40" + "vw";
     e.currentTarget.style.top = "40" + "vh";
+
+    jogada(e.currentTarget.dataset.value);
 }
 
 function libera_cartas(){
