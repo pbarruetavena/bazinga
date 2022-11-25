@@ -49,8 +49,12 @@ marteloEl.addEventListener('click', function(){
 //  correções no timing da animação (1000ms = melhor ângulo)
 marteloEl.addEventListener('click', function(e){
     marteloEl.classList.toggle('marteloClicado');
-    setTimeout(function(){marteloEl.classList.toggle('marteloClicado');}, 1000);
+    setTimeout(function(){
+        marteloEl.classList.toggle('marteloClicado');
+    }, 1000);
     indEl.classList.toggle('parar');
-    setTimeout(function(){indEl.classList.toggle('parar');}, 1000);
+    setTimeout(function(){
+        indEl.classList.toggle('parar');
+    }, 1000);
 });
 
