@@ -20,6 +20,7 @@ body {
 
 #titulo{
     align-self: flex-start;
+    -webkit-text-stroke: 2px black;
     color: rgb(226, 43, 43);
     font-size: 4vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -28,6 +29,7 @@ body {
 #sub{
     color: rgb(209, 166, 24);
     font-size: 2.2vw;
+    -webkit-text-stroke: 0.5px black;
 }
 #voltar{
     height: 70px;
