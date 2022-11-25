@@ -145,7 +145,17 @@ function jogada(n1){
     cartaJogada = cartas[n1];
     let nb = gera_int_exlusive(4);
     cartaBot = cartas[nb];
-    cartasEl[nb].style.backgroundImage = `url(../imagens/user-${cartaBot.naipe}.png)`;
+
+    let img_src;
+    switch(cartaBot.naipe){
+        case 'R': img_src = 'pedra'; break;
+        case 'P': img_src = 'papel'; break;
+        case 'T': img_src = 'tesoura'; break;
+        case 'L': img_src = 'lagarto'; break;
+        case 'S': img_src = 'spock'; break;
+    }
+
+    cartasEl[nb].style.backgroundImage = `url(../imagens/user-${img_src}.png)`;
 }
 
 function move_carta(e){
@@ -173,13 +183,15 @@ function jogar_init(){
     libera_cartas();
 
 }
-
+jogar_init();
 
 function pause() {
-    
+    $('#pause-container').removeClass('invisivel');
 }
 
 $('#icone-pause').click(pause);
+$('#icone-home').click(() => window.location.href = "../index.html");
+$('#icone-resume').click(() => $('#pause-container').addClass('invisivel'));
 
 posTemaAtual = storage.carregarPosTemaAtual();
 temas = storage.carregarTemas();
