@@ -47,7 +47,7 @@ marteloEl.addEventListener('click', function(){
 //  Mudei o nome pra marteloEl, ao invés de martEl
 //  Martelo tira classe por conta própria
 //  correções no timing da animação (1000ms = melhor ângulo)
-marteloEl.addEventListener('click', function(e){
+marteloEl.addEventListener('click', function(e){  
     marteloEl.classList.toggle('marteloClicado');
     setTimeout(function(){
         marteloEl.classList.toggle('marteloClicado');
@@ -56,5 +56,10 @@ marteloEl.addEventListener('click', function(e){
     setTimeout(function(){
         indEl.classList.toggle('parar');
     }, 1000);
+
+    //  Adiciona ou retira classe invisivel do indicador quando o martelo for clicado
+    indEl.classList.toggle('invisivel');
+    //  Deixo sozinho em uma linha o texto do #result 
+    resultEl.classList.add('alone');
 });
 

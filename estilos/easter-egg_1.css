@@ -103,85 +103,37 @@ body {
 
 }
 
+.invisivel {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.alone {
+    display: block;
+}
+
 /*  ------------------ Parte do responsivo ------------------  */
-@media (min-width: 0px) and (max-width: 350px) {
+@media (min-width: 0px) and (max-width: 600px) {
     #titulo {
-        font-size: 15px;
+        font-size: 0.9rem;
     }
     #sub {
-        font-size: 12px;
+        font-size: 0.8rem;
     }
     #texto {
-        font-size: 10px;
+        font-size: 0.5rem;
     }
     #niv {
-        font-size: 14px;
+        font-size: 0.5rem;
         display: block;
     }
     #indicador {
-        height: 10px;
-        width: 10vw;
+        height: 1em;
+        width: 1em;
         padding: 0em;
     }
   }
 
-  @media (min-width: 351px) and (max-width: 450px) {
-    #titulo {
-        font-size: 17px;
-    }
-    #sub {
-        font-size: 14px;
-    }
-    #texto {
-        font-size: 10px;
-    }
-    #niv {
-        font-size: 16px;
-    }
-    #indicador {
-        height: 15px;
-        width: 12vw;
-        padding: 0em;
-    }
-  }
 
-  @media (min-width: 451px) and (max-width: 550px) {
-    #titulo {
-        font-size: 22px;
-    }
-    #sub {
-        font-size: 16px;
-    }
-    #texto {
-        font-size: 14px;
-    }
-    #niv {
-        font-size: 20px;
-    }
-    #indicador {
-        height: 30px;
-        width: 13vw;
-        padding: 1.5em;
-    }
-  }
-
-  @media (min-width: 551px) and (max-width: 650px) {
-    #titulo {
-        font-size: 27px;
-    }
-    #sub {
-        font-size: 20px;
-    }
-    #texto {
-        font-size: 17px;
-    }
-    #niv {
-        font-size: 24px;
-    }
-    #indicador {
-        height: 40px;
-        width: 14vw;
-        padding: 2em;
-    }
-  }
   
