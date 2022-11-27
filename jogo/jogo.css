@@ -147,15 +147,6 @@ body {
     transform: scale(1.1, 1.1);
 }
 
-#container-cartas-bot .carta:not(.select-bot-carta) {
-    transform: rotateY(180deg);
-    background-image: none;
-}
-#container-cartas-bot .carta:not(.select-bot-carta) .numero-carta {
-    display: none;
-}
-
-/* select-bot-carta classe para a carta que o bot jogou */
 
 #pause-container {
     position: absolute;
@@ -205,5 +196,44 @@ body {
 }
 
 #pause-container.invisivel {
+    display: none;
+}
+
+#container-cartas-bot .carta:not(.mov-card-bot) {
+    background-image: none !important;
+}
+#container-cartas-bot .carta:not(.mov-card-bot) .numero-carta {
+    display: none;
+}
+
+#container-cartas-jogador .mov-card-bot {
+    position: absolute;
+    left: 57vw;
+    top: 50vh;
+}
+
+#container-cartas-bot .mov-card-bot {
+    position: absolute;
+    left: 34vw;
+    top: 31vh;
+}
+
+
+#container-res {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#display-res {
+    margin: 0px;
+    font-size: 30px;
+    border: 3px var(--cor-texto) solid;
+    border-radius: 10em;
+    padding: 20px;
+}
+#container-res.invisivel {
     display: none;
 }

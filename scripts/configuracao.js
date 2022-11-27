@@ -360,10 +360,6 @@ $('#cor1').change(muda_cor_input1);
 $('#cor2').change(muda_cor_input2);
 $('#cor3').change(muda_cor_input3);
 
-
-$('#botao-fechar-temas-predefinidos').click(fecha_temas_predefinidos);
-
-
 function salvar() {
     storage.salvarPerfil();
     storage.salvarTemas();

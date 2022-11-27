@@ -1,7 +1,11 @@
 let cartasEl = document.querySelectorAll('.carta');
 let cartas = [];
 let cartasJogadorEl = document.querySelectorAll('#container-cartas-jogador .carta');
-let estagioJogo = 0; 
+let estagioJogo = 0;
+let quadro_jogo = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+
+
+let displayResultado = document.querySelector('#display-res');
 
 function jogadorVencedor(cartaJogador, valorJogador, cartaBot, valorBot){
     const playerVictory = 1;
@@ -112,7 +116,7 @@ function embaralha_vet(){
 function da_carta(){
     cartas = embaralha_vet();
 
-    for(let i = 4; i < cartas.length; i++){
+    for(let i = 0; i < cartas.length; i++){
         cartasEl[i].childNodes[1].innerHTML = cartas[i].valor;
         cartasEl[i].childNodes[3].innerHTML = cartas[i].valor;
 
@@ -141,27 +145,33 @@ function da_carta(){
     }
 }
 
+function move_carta_bot(carta_mover) {
+    carta_mover.classList.add('mov-card-bot');
+}
+
 function jogada(n1){
     cartaJogada = cartas[n1];
     let nb = gera_int_exlusive(4);
-    cartaBot = cartas[nb];
 
-    let img_src;
-    switch(cartaBot.naipe){
-        case 'R': img_src = 'pedra'; break;
-        case 'P': img_src = 'papel'; break;
-        case 'T': img_src = 'tesoura'; break;
-        case 'L': img_src = 'lagarto'; break;
-        case 'S': img_src = 'spock'; break;
+    move_carta_bot(cartasEl[nb]);
+    trava_cartas();
+
+    let res = jogadorVencedor(cartas[n1].naipe, cartas[n1].valor, cartas[nb].naipe, cartas[nb].valor);
+    if(res){
+        displayResultado.innerHTML = 'Você ganhou essa rodada';
+    } else {
+        displayResultado.innerHTML = 'Você perdeu essa rodada';
     }
-
-    cartasEl[nb].style.backgroundImage = `url(../imagens/user-${img_src}.png)`;
+    
+    setTimeout(() => {
+        cartasEl[n1].classList.remove('mov-card-bot');
+        cartasEl[nb].classList.remove('mov-card-bot');
+        $('#container-res').removeClass('invisivel');
+    }, 1000);
 }
 
 function move_carta(e){
-    e.currentTarget.style.position = "absolute";
-    e.currentTarget.style.left = "40" + "vw";
-    e.currentTarget.style.top = "40" + "vh";
+    e.currentTarget.classList.add('mov-card-bot');
 
     jogada(e.currentTarget.dataset.value);
 }
