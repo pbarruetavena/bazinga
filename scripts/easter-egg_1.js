@@ -54,13 +54,13 @@ marteloEl.addEventListener('click', function(e){
     indEl.classList.toggle('marcado');
     setTimeout(function(){
         indEl.classList.toggle('marcado');
-    }, 1000);
+    }, 300);
     setTimeout(function(){
         indEl.classList.toggle('desmarcar');
-    }, 1001);
+    }, 301);
     setTimeout(function(){
         indEl.classList.toggle('desmarcar');
-    }, 1100);
+    }, 400);
     //  Deixo sozinho em uma linha o texto do #result 
     resultEl.classList.add('alone');
 });
