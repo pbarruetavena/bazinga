@@ -194,9 +194,6 @@ function acumulador(n) {
 }
 
 function calculaPontuacao(res, valorJ, naipe, valorB) {
-    if(!res){
-        return 0;
-    }
     
     if(valorJ == 'A'){
         valorJ = 1;
@@ -221,8 +218,44 @@ function calculaPontuacao(res, valorJ, naipe, valorB) {
     }
 
     let pont = 200 * indiceValor + 50 * Math.pow(p2, 2);
+    pont = Math.round(pont);
 
-    return Math.round(pont);
+    if(!res){
+        pont = pont * (-1) / 2;
+    }
+
+    return pont;
+}
+
+function preenche_quadro(res, naipeBJ) {
+    let naipes = ['R', 'P', 'T', 'L', 'S'];
+    
+    let i = 0;
+    for(; i < 5; i++){
+        if(naipeBJ[res] == naipes[i]){
+            break;
+        }
+    }
+
+    quadro_jogo[res][i]++;
+    
+    if(quadro_jogo[res][i] == 4){
+        return 1; // alguem ganhou
+    } else {
+        return 0; // jogo continua
+    }
+}
+
+function encerra_jogo(res, pontuacao) {
+    if(res) {
+        displayResultado.innerHTML = 'Parabéns, você venceu! Pontuação: ' + pontuacao;
+        novo_registro(pontuacao, perfilAtual);
+    } else {
+        displayResultado.innerHTML = 'Você perdeu. Mais sorte da próxima vez.'
+    }
+    document.querySelector('#container-res').classList.remove('invisivel');
+
+    
 }
 
 function jogada(n1){
@@ -250,7 +283,14 @@ function jogada(n1){
 
     setTimeout(() => {
         $('#container-res').addClass('invisivel');
-        jogar_init();
+        if( preenche_quadro(res, [cartas[nb].naipe, cartas[n1].naipe]) ){
+
+            encerra_jogo(res, pontuacaoJogador);
+            return;
+
+        } else {
+            jogar_init();
+        }
     }, 2000);
 }
 
@@ -263,19 +303,20 @@ function move_carta(e){
 function libera_cartas(){
     for(let carta of cartasJogadorEl) {
         carta.addEventListener('click', move_carta);
+        carta.classList.add('c-clicavel');
     }
 }
 
 function trava_cartas(){
     for(let carta of cartasJogadorEl){
         carta.removeEventListener('click', move_carta);
+        carta.classList.remove('c-clicavel');
     }
 }
 
 function jogar_init(){
     da_carta();
     libera_cartas();
-
 }
 jogar_init();
 

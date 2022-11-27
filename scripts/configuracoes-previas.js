@@ -113,6 +113,11 @@ let atualiza = {
     }
 };
 
+//     MÉTODOS PARA O RANKING
+function novo_registro(pontuacao, nPerfil){
+                                        // criar metodo para registrar pontuações
+}
+
 
 function inicializar(){
     perfis = storage.carregarPerfil();

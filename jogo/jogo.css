@@ -141,6 +141,9 @@ body {
     background-image: url(../imagens/user-pedra.png);
 }
 
+.carta:not(.c-clicavel):hover {
+    cursor: not-allowed;
+}
 .c-clicavel:hover {
     cursor: pointer;
     transform: translateY(5px);
