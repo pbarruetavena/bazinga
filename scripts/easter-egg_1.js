@@ -9,31 +9,31 @@ marteloEl.addEventListener('click', function(){
     let alt = (rect.top / window.innerHeight) * 100; 
     console.log(alt);
 
-    if(alt <= 43){
+    if(alt <= 40){
         resultEl.textContent = "MONSTRO!";
         document.getElementById("result").style.color = 'red';
     }
-    else if (alt <= 46){
+    else if (alt <= 43){
         resultEl.textContent = "Gorila!";
         document.getElementById("result").style.color = 'rgb(24, 71, 37)';
     }
-    else if (alt <= 49){
+    else if (alt <= 46){
         resultEl.textContent = "fisiculturista";
         document.getElementById("result").style.color = 'rgb(171, 115, 19)';
     }
-    else if (alt <= 52){
+    else if (alt <= 49){
         resultEl.textContent = "lenhador";
         document.getElementById("result").style.color = 'rgb(171, 168, 19)';
     }
-    else if (alt <= 55){
+    else if (alt <= 52){
         resultEl.textContent = "spock";
         document.getElementById("result").style.color = 'rgb(19, 153, 171)';
     }
-    else if (alt <= 58){
+    else if (alt <= 55){
         resultEl.textContent = "lagarto";
         document.getElementById("result").style.color = 'rgb(119, 133, 120)';
     }
-    else if (alt <= 60){
+    else if (alt <= 58){
         resultEl.textContent = "pedra";
         document.getElementById("result").style.color = 'rgb(61, 64, 61)';
     }
@@ -54,11 +54,8 @@ marteloEl.addEventListener('click', function(e){
     }, 1000);
     indEl.classList.toggle('parar');
     setTimeout(function(){
-        indEl.classList.toggle('parar');
+        indEl.classList.toggle('marcado');
     }, 1000);
-
-    //  Adiciona ou retira classe invisivel do indicador quando o martelo for clicado
-    indEl.classList.toggle('invisivel');
     //  Deixo sozinho em uma linha o texto do #result 
     resultEl.classList.add('alone');
 });
