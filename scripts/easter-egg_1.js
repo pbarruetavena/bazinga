@@ -7,7 +7,6 @@ let resultEl = document.querySelector("#result");
 marteloEl.addEventListener('click', function(){
     let rect = indEl.getBoundingClientRect();
     let alt = (rect.top / window.innerHeight) * 100; 
-    console.log(alt);
 
     if(alt <= 40){
         resultEl.textContent = "MONSTRO!";
@@ -52,10 +51,13 @@ marteloEl.addEventListener('click', function(e){
     setTimeout(function(){
         marteloEl.classList.toggle('marteloClicado');
     }, 1000);
-    indEl.classList.toggle('parar');
+    indEl.classList.toggle('marcado');
     setTimeout(function(){
         indEl.classList.toggle('marcado');
     }, 1000);
+    setTimeout(function(){
+        indEl.classList.toggle('desmarcar');
+    })
     //  Deixo sozinho em uma linha o texto do #result 
     resultEl.classList.add('alone');
 });
