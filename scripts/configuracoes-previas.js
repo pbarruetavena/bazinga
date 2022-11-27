@@ -118,13 +118,11 @@ function inicializar(){
     perfis = storage.carregarPerfil();
     perfilAtual = storage.carregaPosPerfilAtual();
 
-    atualiza.perfil(perfilAtual);
 
     posTemaAtual = storage.carregarPosTemaAtual();
     temas = storage.carregarTemas();
     temaAtual = temas[posTemaAtual];
 
     atualiza.tema(temaAtual);
-    atualiza.perfil(perfis[perfilAtual]);
 }
 

@@ -1,15 +1,49 @@
+$('#icone-pause').click(pause);
+$('#icone-home').click(() => window.location.href = "../index.html");
+$('#icone-resume').click(() => $('#pause-container').addClass('invisivel'));
+
+inicializar();
+
+function gera_int_exlusive(limite){
+    return Math.floor(Math.random() * limite);
+}
+
 let cartasEl = document.querySelectorAll('.carta');
 let cartas = [];
 let cartasJogadorEl = document.querySelectorAll('#container-cartas-jogador .carta');
 let estagioJogo = 0;
 let quadro_jogo = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+let pontuacaoJogador = 0;
 
 
 let displayResultado = document.querySelector('#display-res');
 
+// iniciar pagina do jogo
+let bots = [
+    {img: 'user-spock.png', nome: 'Bot Spock'},
+    {img: 'user-pedra.png', nome: 'Bot Pedra'},
+    {img: 'user-papel.png', nome: 'Bot Papel'},
+    {img: 'user-tesoura.png', nome: 'Bot Tesoura'},
+    {img: 'user-lagarto.png', nome: 'Bot Lagarto'}
+];
+
+let nBot = gera_int_exlusive(5)
+$('#container-dados-jogador img').attr("src", `../imagens/${perfis[perfilAtual].imagem}`);
+document.querySelector('#nome-jogador').innerHTML = perfis[perfilAtual].nome;
+$('#container-dados-bot img').attr("src", `../imagens/${bots[nBot].img}`);
+document.querySelector('#nome-bot').innerHTML = bots[nBot].nome;
+
+
 function jogadorVencedor(cartaJogador, valorJogador, cartaBot, valorBot){
     const playerVictory = 1;
     const botVictory = 0;
+
+    if(valorJogador == 'A'){
+        valorJogador = 1;
+    }
+    if(valorBot == 'A'){
+        valorBot = 1;
+    }
 
     /*  Caso ambos joguem a mesma carta avaliamos o maior valor numérico(considerando que
         não tem como ter exatamente a mesma carta)   */
@@ -61,10 +95,6 @@ function jogadorVencedor(cartaJogador, valorJogador, cartaBot, valorBot){
             return playerVictory;
     }
 
-}
-
-function gera_int_exlusive(limite){
-    return Math.floor(Math.random() * limite);
 }
 
 function compara_carta(c1, c2){
@@ -149,6 +179,52 @@ function move_carta_bot(carta_mover) {
     carta_mover.classList.add('mov-card-bot');
 }
 
+function acumulador(n) {
+    let q = 0;
+    let valor = 0;
+
+    for(let i = 0; i < 5; i++){
+        if(quadro_jogo[n][i] > 0){
+            q++;
+            valor += 7 + q;
+        }
+    }
+
+    return valor;
+}
+
+function calculaPontuacao(res, valorJ, naipe, valorB) {
+    if(!res){
+        return 0;
+    }
+    
+    if(valorJ == 'A'){
+        valorJ = 1;
+    }
+    if(valorB == 'A'){
+        valorB = 1;
+    }
+
+    let x = Math.abs(valorB - valorJ) + 3;
+    if(naipe == 'S'){
+        x--;
+    }
+    if(naipe == 'L'){
+        x++;
+    }
+
+    let indiceValor = 9 * Math.log(12 - x) / Math.log(12);
+
+    let p2 = acumulador(1) - acumulador(0);
+    if(p2 < 0){
+        p2 = 0;
+    }
+
+    let pont = 200 * indiceValor + 50 * Math.pow(p2, 2);
+
+    return Math.round(pont);
+}
+
 function jogada(n1){
     cartaJogada = cartas[n1];
     let nb = gera_int_exlusive(4);
@@ -168,6 +244,14 @@ function jogada(n1){
         cartasEl[nb].classList.remove('mov-card-bot');
         $('#container-res').removeClass('invisivel');
     }, 1000);
+
+    pontuacaoJogador+=calculaPontuacao(res, cartas[n1].valor, cartas[n1].naipe, cartas[nb].valor);
+    document.querySelector('#pontuacao-jogador').innerHTML = pontuacaoJogador + ' pts';
+
+    setTimeout(() => {
+        $('#container-res').addClass('invisivel');
+        jogar_init();
+    }, 2000);
 }
 
 function move_carta(e){
@@ -198,14 +282,3 @@ jogar_init();
 function pause() {
     $('#pause-container').removeClass('invisivel');
 }
-
-$('#icone-pause').click(pause);
-$('#icone-home').click(() => window.location.href = "../index.html");
-$('#icone-resume').click(() => $('#pause-container').addClass('invisivel'));
-
-posTemaAtual = storage.carregarPosTemaAtual();
-temas = storage.carregarTemas();
-temaAtual = temas[posTemaAtual];
-
-atualiza.tema(temaAtual);
-atualiza.perfil(perfis[perfilAtual]);
