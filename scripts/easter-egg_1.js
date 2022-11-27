@@ -57,7 +57,10 @@ marteloEl.addEventListener('click', function(e){
     }, 1000);
     setTimeout(function(){
         indEl.classList.toggle('desmarcar');
-    })
+    }, 1001);
+    setTimeout(function(){
+        indEl.classList.toggle('desmarcar');
+    }, 1100);
     //  Deixo sozinho em uma linha o texto do #result 
     resultEl.classList.add('alone');
 });

@@ -52,10 +52,10 @@ body {
                 girando 0.6s ease-in-out 0.2s 2 alternate;
 }
 .desmarcar{
-    content: url("imagens\\indicador_easter-egg.png");
+    content: url("imagens\indicador_easter-egg.png");
 }
 .marcado{
-    content:url("imagens\\indicador_easter-egg_marcado.png");
+    content:url("imagens\indicador_easter-egg_marcado.png");
 }
 @keyframes crescer {
     from{transform: scale(1);}
