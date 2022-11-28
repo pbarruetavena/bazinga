@@ -74,6 +74,10 @@ body {
 /*          *************************** ESTILIZAÇÃO DAS CARTAS *********************             */
 /* usar classes (.carta-selecionada, .carta-lateral, .carta-traseira) para controlar as posições, fazer transições e colocar easter eggs */
 
+#nome-serie-tbbt {
+    font-weight: bold;
+}
+
 .carta {
     border-radius: 5px;
     border: 5px var(--cor-texto) solid;
@@ -102,11 +106,11 @@ body {
 }
 .carta-selecionada .nome-carta {
     margin: 3px;
-    font-size: 30px;
+    font-size: 27px;
     font-family: 'Press Start 2P', cursive;
 }
 .carta-selecionada .descricao-carta {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     font-family: 'Spectral', serif;
     margin: 3px;
@@ -193,4 +197,46 @@ body {
     background-color: var(--cor-texto) !important;
     color: var(--cor-fundo) !important;
     border-color: var(--cor-fundo) !important;
+}
+
+@media (min-width: 651px) {
+    #area-clicavel-esquerda i,
+    #area-clicavel-direita i {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #botao-home {
+        align-self: flex-start;
+    }
+
+    #area-clicavel-esquerda,
+    #area-clicavel-direita {
+        height: 60%;
+        width: 30vw;
+        display: flex;
+        align-items: center;
+    }
+    #area-clicavel-esquerda i,
+    #area-clicavel-direita i {
+        font-size: 30px;
+        margin: 4vw;
+        opacity: 40%;
+    }
+    #area-clicavel-esquerda {
+        justify-content: flex-start;
+    }
+    #area-clicavel-direita {
+        justify-content: flex-end;
+    }
+
+    .carta.carta-esquerda,
+    .carta.carta-direita {
+        display: none;
+    }
 }

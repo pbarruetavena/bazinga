@@ -14,6 +14,24 @@ let classes = [
     'carta-esquerda'
 ];
 let indice = 12;
+let curtidas;    // 0 para não curtido e 1 para curtido 
+let likesEl = document.querySelectorAll('.like');
+
+function carrega_curtidas() {
+    curtidas = JSON.parse(localStorage.getItem('vet-curtidas'));
+    if(curtidas == null){
+        curtidas = [0, 0, 0, 0];
+    }
+
+    for(let i = 0; i < likesEl.length; i++) {
+        if(curtidas[i]){
+            likesEl[i].classList.toggle('curtido');
+        }
+    }
+}
+carrega_curtidas();
+
+
 
 function define_posicoes() { // função não utilizada
     let containerEl = document.querySelector('#container');
@@ -53,7 +71,7 @@ function gira_classes() {
         cartas[i].classList.add(classes[(i+indice)%cartas.length]);
     }
 
-
+    localStorage.setItem('indice', indice);
 }
 
 document.querySelector('#area-clicavel-esquerda').addEventListener('click', () => {
@@ -87,9 +105,28 @@ $('#github-victor').click(() => open("https://github.com/VictorN77", '_blank'));
 
 const botoesLikeArr = document.querySelectorAll('.like');
 
-for(let likeBtn of botoesLikeArr){
-    likeBtn.addEventListener('click', () => {likeBtn.classList.toggle('curtido');});
+function curtir(likeBtn) {
+    likeBtn.classList.toggle('curtido');
+
+    let nCarta = likeBtn.dataset.i;
+    curtidas[nCarta] = (curtidas[nCarta] + 1) % 2;
+    localStorage.setItem('vet-curtidas', JSON.stringify(curtidas));
 }
+
+for(let likeBtn of botoesLikeArr){
+    likeBtn.addEventListener('click', (e) => curtir(e.currentTarget));
+}
+
+function carrega_carta_atual() {
+    indice = localStorage.getItem('indice');
+    if(indice == null) {
+        indice = 12;
+    }
+    indice = Number(indice);
+    gira_classes();
+}
+carrega_carta_atual();
+
 
 $('#linkEasterEgg_1').click(() => location.href  = 'easter-egg_1.html');
 
@@ -99,4 +136,3 @@ temas = storage.carregarTemas();
 temaAtual = temas[posTemaAtual];
 
 atualiza.tema(temaAtual);
-atualiza.perfil(perfis[perfilAtual]);
