@@ -38,20 +38,9 @@ function cria_elemento_registro(registro) {
     rankingEl.push(novo_registro_el);
 }
 
-for(let i = 0; i < ranking.length && i < 10; i++){
+for(let i = 0; i < ranking.length; i++){
     cria_elemento_registro(ranking[i]);
 }
-
-$('#expandir-minimizar-ranking').click(() => {
-    for(let el of rankingEl){
-        el.remove();
-    }
-    quantidade_registros+=10;
-    rankingEl = [];
-    for(let i = 0; i < ranking.length && i < quantidade_registros; i++){
-        cria_elemento_registro(ranking[i]);
-    }
-});
 
 
 let metodo_teste = {

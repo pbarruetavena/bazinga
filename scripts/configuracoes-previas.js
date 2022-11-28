@@ -115,12 +115,19 @@ let atualiza = {
 
 //     MÉTODOS PARA O RANKING
 function novo_registro(pontuacao, nPerfil){
-    ranking = storage.carregarRanking;
+    ranking = storage.carregarRanking();
 
     let novo_registro = {
-        usuario: perfis[nPerfil],
+        usuario: nPerfil,
         pontuacao: pontuacao
     }
+
+    for(let i = 0; i < ranking.length; i++){
+        if(novo_registro.pontuacao >= ranking[i].pontuacao){
+            ranking.splice(i, 0, novo_registro)
+        }
+    }
+    storage.salvarRanking();
 }
 
 

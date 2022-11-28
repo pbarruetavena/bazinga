@@ -325,7 +325,6 @@ function jogada(n1){
         if( preenche_quadro(res, [cartas[nb].naipe, cartas[n1].naipe]) ){
 
             encerra_jogo(res, pontuacaoJogador);
-            novo_registro(pontuacaoJogador, perfilAtual);
             return;
 
         } else {
