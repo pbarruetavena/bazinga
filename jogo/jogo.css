@@ -115,33 +115,31 @@ body {
     align-self: flex-end;
 }
 
-#j1 {
-    background-image: url(../imagens/user-spock.png);
+#container-res {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-#j2 {
-    background-image: url(../imagens/user-pedra.png);
+#container-botoes-final {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
-#j3 {
-    background-image: url(../imagens/user-tesoura.png);
+#container-res .botao-final {
+    border-radius: 50px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 40px;
+    border: 1px var(--cor-texto) solid;
+    padding: 10px 15px;
 }
-#j4 {
-    background-image: url(../imagens/user-lagarto.png);
-}
-
-#b1 {
-    background-image: url(../imagens/user-pedra.png);
-}
-#b2 {
-    background-image: url(../imagens/user-papel.png);
-}
-#b3 {
-    background-image: url(../imagens/user-spock.png);
-}
-#b4 {
-    background-image: url(../imagens/user-pedra.png);
+#container-res .botao-final:hover {
+    cursor: pointer;
+    color: var(--cor-fundo);
+    background-color: var(--cor-texto);
 }
 
-.carta:not(.c-clicavel):hover {
+#container-cartas-jogador .carta:not(.c-clicavel):hover {
     cursor: not-allowed;
 }
 .c-clicavel:hover {

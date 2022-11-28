@@ -255,7 +255,20 @@ function encerra_jogo(res, pontuacao) {
     }
     document.querySelector('#container-res').classList.remove('invisivel');
 
-    
+    let containerBotoes = document.querySelector('#container-botoes-final');
+
+    let homeBtn = document.createElement('button');
+    homeBtn.innerHTML = '<i class="fa fa-home" aria-hidden="true"></i>';
+    homeBtn.classList.add('botao-final');
+    containerBotoes.appendChild(homeBtn);
+    homeBtn.addEventListener('click', () => window.location.href = "../index.html");
+
+    let reiniciarBtn = document.createElement('button');
+    reiniciarBtn.innerHTML = '<i class="fa fa-repeat" aria-hidden="true"></i>';
+    reiniciarBtn.classList.add('botao-final');
+    containerBotoes.appendChild(reiniciarBtn);
+    reiniciarBtn.addEventListener('click', () => document.location.reload());
+
 }
 
 function jogada(n1){
@@ -279,6 +292,9 @@ function jogada(n1){
     }, 1000);
 
     pontuacaoJogador+=calculaPontuacao(res, cartas[n1].valor, cartas[n1].naipe, cartas[nb].valor);
+    if(pontuacaoJogador < 0){
+        pontuacaoJogador = 0;
+    }
     document.querySelector('#pontuacao-jogador').innerHTML = pontuacaoJogador + ' pts';
 
     setTimeout(() => {
