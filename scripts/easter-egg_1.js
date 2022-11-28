@@ -1,4 +1,8 @@
-//$('#voltar').click(() => location.href  = 'sobre-nos.html');
+let voltarEl = document.querySelector("#voltar");
+
+voltarEl.addEventListener('click', () => {
+    location.href = 'sobre-nos.html';
+});
 
 let indEl = document.querySelector('#indicador');
 let marteloEl = document.querySelector('#martelo');
