@@ -115,7 +115,12 @@ let atualiza = {
 
 //     MÉTODOS PARA O RANKING
 function novo_registro(pontuacao, nPerfil){
-                                        // criar metodo para registrar pontuações
+    ranking = storage.carregarRanking;
+
+    let novo_registro = {
+        usuario: perfis[nPerfil],
+        pontuacao: pontuacao
+    }
 }
 
 

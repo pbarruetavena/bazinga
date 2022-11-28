@@ -28,9 +28,9 @@ let bots = [
 ];
 
 let nBot = gera_int_exlusive(5)
-$('#container-dados-jogador img').attr("src", `../imagens/${perfis[perfilAtual].imagem}`);
+$('#container-dados-jogador imagem-perfil-jogo').attr("src", `../imagens/${perfis[perfilAtual].imagem}`);
 document.querySelector('#nome-jogador').innerHTML = perfis[perfilAtual].nome;
-$('#container-dados-bot img').attr("src", `../imagens/${bots[nBot].img}`);
+$('#container-dados-bot #imagem-bot-perfil').attr("src", `../imagens/${bots[nBot].img}`);
 document.querySelector('#nome-bot').innerHTML = bots[nBot].nome;
 
 
@@ -271,6 +271,27 @@ function encerra_jogo(res, pontuacao) {
 
 }
 
+function adiciona_chave(res, naipes) {
+    let nova_chave = document.createElement('img');
+    
+    let link;
+    switch (naipes[res]) {
+        case 'R': link = 'pedra'; break;
+        case 'P': link = 'papel'; break;
+        case 'T': link = 'tesoura'; break;
+        case 'L': link = 'lagarto'; break;
+        case 'S': link = 'spock';
+    }
+
+    nova_chave.src = `../imagens/user-${link}.png`;
+
+    if(res){            // adiciona a chave do naipe no quadro
+        document.querySelector(`#quadro-jogador .${naipes[1]}`).appendChild(nova_chave);
+    } else {
+        document.querySelector(`#quadro-bot .${naipes[0]}`).appendChild(nova_chave);
+    }
+}
+
 function jogada(n1){
     cartaJogada = cartas[n1];
     let nb = gera_int_exlusive(4);
@@ -297,11 +318,14 @@ function jogada(n1){
     }
     document.querySelector('#pontuacao-jogador').innerHTML = pontuacaoJogador + ' pts';
 
+    adiciona_chave(res, [cartas[nb].naipe, cartas[n1].naipe]);
+
     setTimeout(() => {
         $('#container-res').addClass('invisivel');
         if( preenche_quadro(res, [cartas[nb].naipe, cartas[n1].naipe]) ){
 
             encerra_jogo(res, pontuacaoJogador);
+            novo_registro(pontuacaoJogador, perfilAtual);
             return;
 
         } else {
