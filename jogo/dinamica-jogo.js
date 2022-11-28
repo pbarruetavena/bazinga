@@ -1,6 +1,8 @@
 $('#icone-pause').click(pause);
 $('#icone-home').click(() => window.location.href = "../index.html");
 $('#icone-resume').click(() => $('#pause-container').addClass('invisivel'));
+$('#icone-help').click(() => document.querySelector('#container-ajuda-pause').classList.remove('invisivel'));
+$('#btn-fechar-ajuda-pause').click(() => document.querySelector('#container-ajuda-pause').classList.add('invisivel'))
 
 inicializar();
 

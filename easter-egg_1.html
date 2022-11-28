@@ -5,14 +5,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="imagens/icone_easter_egg.png">
-        <title>Easter Egg 1</title>
+        <title>Medidor de força</title>
         <link rel="stylesheet" href="estilos/easter-egg_1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
 
     <body>
-        <img src="imagens/seta-esquerda.png" alt="voltar para a página principal" id="voltar">
-        <div id="fluxo">
+        <script src="scripts/configuracoes-previas.js"></script>
+
+        <i id="voltar" class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        <section id="fluxo">
 
             <header>
                 <article>
@@ -25,13 +28,15 @@
             maior altura possível no medidor de força. O quão forte você é?</p>
 
             <section id="minigame">
-                    <p id="niv">Nível de força: <span id="result"></span></p>
-                <img src="imagens/indicador_easter-egg.png" id="indicador">
-                <img src="imagens/teste-forca.png" id="teste-forca" alt="teste-força">
-                <img src="imagens/martelo_easter-egg.png" id="martelo">
+                <p id="niv">Nível de força: <span id="result"></span></p>
+                <article>
+                    <i id="indicador" class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <img src="imagens/teste-forca.png" id="teste-forca" alt="teste-força">
+                    <img src="imagens/martelo_easter-egg.png" id="martelo">
+                </article>
                 
             </section>
-        </div>
+        </section>
 
         <script src="scripts/easter-egg_1.js"></script>
     </body>

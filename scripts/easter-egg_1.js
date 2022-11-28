@@ -69,3 +69,8 @@ marteloEl.addEventListener('click', function(e){
     resultEl.classList.add('alone');
 });
 
+
+posTemaAtual = storage.carregarPosTemaAtual();
+temas = storage.carregarTemas();
+temaAtual = temas[posTemaAtual];
+atualiza.tema(temaAtual);
