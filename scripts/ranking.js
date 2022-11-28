@@ -3,6 +3,15 @@ ranking = storage.carregarRanking();
 let rankingEl = [];
 let quantidade_registros = 10;
 
+function reiniciar_ranking() {
+    let ver = localStorage.getItem('rankingaberto');
+
+    if(ver == 'true') {
+        mostraRanking();
+    }
+}
+reiniciar_ranking();
+
 function cria_elemento_registro(registro) {
 
     let posicao = ranking.indexOf(registro) + 1;
@@ -43,19 +52,29 @@ for(let i = 0; i < ranking.length; i++){
 }
 
 
-let metodo_teste = {
-    adiciona_registro_obj: function(user, pont) {
-        ranking.push({
-            usuario: user,
-            pontuacao: pont
-        });
-    },
-    adiciona_x_registro_obj: function(x, user, pont) {
-        for(let i = 0; i < x; i++){
-            ranking.push({
-                usuario: user,
-                pontuacao: pont
-            });
+function deleta_registros_user(nUser) {
+
+    for(let i = 0; i < ranking.length; i++) {
+        
+        if(ranking[i].usuario == nUser) {           // deleta os registros com o user
+            ranking.splice(i, 1);
+        } else if(ranking[i].usuario > nUser) {     // diminui o numero do user já que um user anterior foi deletado
+            ranking[i].usuario--;
         }
-    } 
+
+    }
+
+    storage.salvarRanking();
 }
+
+function deleta_ranking() {
+    ranking = [];
+    storage.salvarRanking();
+}
+
+$('#reiniciar-ranking').click(() => {
+    localStorage.setItem('rankingaberto', 'true');
+    document.location.reload();
+});
+
+$('#delete-ranking').click(deleta_ranking);

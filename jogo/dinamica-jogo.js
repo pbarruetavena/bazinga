@@ -27,8 +27,10 @@ let bots = [
     {img: 'user-lagarto.png', nome: 'Bot Lagarto'}
 ];
 
-let nBot = gera_int_exlusive(5)
-$('#container-dados-jogador imagem-perfil-jogo').attr("src", `../imagens/${perfis[perfilAtual].imagem}`);
+
+let nBot = gera_int_exlusive(5);
+
+$('#container-dados-jogador #imagem-perfil-jogo').attr("src", `../imagens/${perfis[perfilAtual].imagem}`);
 document.querySelector('#nome-jogador').innerHTML = perfis[perfilAtual].nome;
 $('#container-dados-bot #imagem-bot-perfil').attr("src", `../imagens/${bots[nBot].img}`);
 document.querySelector('#nome-bot').innerHTML = bots[nBot].nome;

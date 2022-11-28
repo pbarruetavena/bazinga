@@ -40,6 +40,8 @@ function mostraRanking(){
 
         menuSelecionado = 'ranking';
     } else {
+        localStorage.setItem('rankingaberto', 'false');
+
         $('#secao-ajuda').css({display: "none"});
         $('#secao-ranking').css({display: "none"});
         $('#principal').css({display: "flex"});
