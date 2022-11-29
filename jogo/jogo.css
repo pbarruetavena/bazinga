@@ -373,4 +373,10 @@ body {
         font-size: 20px !important;
         padding: 5px 4px;
     }
+
+
+    #pause-container {
+        left: 14vw;
+        top: 19vh;
+    }
 }

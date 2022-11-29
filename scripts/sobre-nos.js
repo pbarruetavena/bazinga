@@ -1,27 +1,7 @@
 
 $('#botao-home').click( () => location.href = "index.html");
 
-/* 
- * Ideias de easter egg: botão de curtir nas cartas que desbloquearia uma imagem de perfil especial (carta do site), dicas especiais e temas pré-definidos
- * Funcionamento do sobre nós: Cartas em uma "roleta", uma selecionada mostra tudo que tem, as laterais são clicáveis e mostram somente uma letra, e quando clicadas elas se tornam a carta selecionada
-*/
 
-// ********** OLHA AQUI PEDRO !!!! **********
-
-/*
-let pedroLikeBtn = document.querySelector('#like-pedro');
-let pedroP = document.querySelector('#pedroDescri');
-let rafaelLikeBtn = document.querySelector('#like-rafael');
-let rafaelP = document.querySelector('#rafaelDescri');
-
-pedroLikeBtn.addEventListener('click',function(){
-    pedroP.innerHTML = "Citação foda";
-});
-
-rafaelLikeBtn.addEventListener('click', function(){
-    rafaelP.innerHTML = "Olá, meu nome é Rafael e também sou um dos criadores do site. Gosto de ler mangás📚, praticar Muay thai🥊 e jogar RPGs.";
-});
-*/
 let cartas = document.querySelectorAll('.carta');
 let classes = [
     'carta-selecionada',
@@ -115,6 +95,7 @@ $('#github-pedro').click(() => window.open("https://github.com/pbarruetavena", '
 $('#github-rafael').click(() => open("https://github.com/rafael-igor-vilaca", '_blank'));
 
 $('#github-victor').click(() => open("https://github.com/VictorN77", '_blank'));
+$('#insta-victor').click(() => window.open("https://www.instagram.com/victornunes.pando/", "_blank"));
 
 
 /* ******* EASTER EGGS *********** */
@@ -142,6 +123,32 @@ function carrega_carta_atual() {
     gira_classes();
 }
 carrega_carta_atual();
+
+
+
+let pedroLikeBtn = document.querySelector('#like-pedro');
+let pedroP = document.querySelector('#pedroDescri');
+let rafaelLikeBtn = document.querySelector('#like-rafael');
+let rafaelP = document.querySelector('#rafaelDescri');
+
+
+pedroLikeBtn.addEventListener('click', () => {
+    if(!curtidas[1]){
+        pedroP.innerHTML = 'Vivendo e aprendendo';
+    } else {
+        pedroP.innerHTML = 'Meu nome é Pedro, tenho 16 anos, estudo no CEFET-MG e sou um dos criadores desse jogo. Gosto muito de programar e um dia quero trabalhar com isso.';
+    }
+});
+
+rafaelLikeBtn.addEventListener('click', () => {
+    if(curtidas[2]){
+        rafaelP.innerHTML = "Olá, meu nome é Rafael e também sou um dos criadores do site. Gosto de ler mangás📚, praticar Muay thai🥊 e jogar RPGs.";
+    } else {
+        rafaelP.innerHTML = "rod, phx qrph h udidho h wdpehp vrx xp grv fuldgruhv gr vlwh. jrvwr gh ohu pdqjdv📚, sudwlfdu pxdb wkdl🥊 h mrjdu usjv.";
+    }
+});
+
+
 
 
 $('#linkEasterEgg_1').click(() => location.href  = 'easter-egg_1.html');

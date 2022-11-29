@@ -218,7 +218,7 @@ body {
     #area-clicavel-esquerda,
     #area-clicavel-direita {
         height: 60%;
-        width: 30vw;
+        width: 25vw;
         display: flex;
         align-items: center;
     }
