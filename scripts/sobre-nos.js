@@ -6,6 +6,22 @@ $('#botao-home').click( () => location.href = "index.html");
  * Funcionamento do sobre nós: Cartas em uma "roleta", uma selecionada mostra tudo que tem, as laterais são clicáveis e mostram somente uma letra, e quando clicadas elas se tornam a carta selecionada
 */
 
+// ********** OLHA AQUI PEDRO !!!! **********
+
+/*
+let pedroLikeBtn = document.querySelector('#like-pedro');
+let pedroP = document.querySelector('#pedroDescri');
+let rafaelLikeBtn = document.querySelector('#like-rafael');
+let rafaelP = document.querySelector('#rafaelDescri');
+
+pedroLikeBtn.addEventListener('click',function(){
+    pedroP.innerHTML = "Citação foda";
+});
+
+rafaelLikeBtn.addEventListener('click', function(){
+    rafaelP.innerHTML = "Olá, meu nome é Rafael e também sou um dos criadores do site. Gosto de ler mangás📚, praticar Muay thai🥊 e jogar RPGs.";
+});
+*/
 let cartas = document.querySelectorAll('.carta');
 let classes = [
     'carta-selecionada',
