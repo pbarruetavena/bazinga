@@ -12,31 +12,31 @@ marteloEl.addEventListener('click', function(){
     let rect = indEl.getBoundingClientRect();
     let alt = (rect.top / window.innerHeight) * 100; 
 
-    if(alt <= 40){
+    if(alt <= 48){
         resultEl.textContent = "MONSTRO!";
         document.getElementById("result").style.color = 'red';
     }
-    else if (alt <= 43){
+    else if (alt <= 51){
         resultEl.textContent = "Gorila!";
         document.getElementById("result").style.color = 'rgb(24, 71, 37)';
     }
-    else if (alt <= 46){
+    else if (alt <= 54){
         resultEl.textContent = "fisiculturista";
         document.getElementById("result").style.color = 'rgb(171, 115, 19)';
     }
-    else if (alt <= 49){
+    else if (alt <= 57){
         resultEl.textContent = "lenhador";
         document.getElementById("result").style.color = 'rgb(171, 168, 19)';
     }
-    else if (alt <= 52){
+    else if (alt <= 60){
         resultEl.textContent = "spock";
         document.getElementById("result").style.color = 'rgb(19, 153, 171)';
     }
-    else if (alt <= 55){
+    else if (alt <= 63){
         resultEl.textContent = "lagarto";
         document.getElementById("result").style.color = 'rgb(119, 133, 120)';
     }
-    else if (alt <= 58){
+    else if (alt <= 66){
         resultEl.textContent = "pedra";
         document.getElementById("result").style.color = 'rgb(61, 64, 61)';
     }
