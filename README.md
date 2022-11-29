@@ -35,10 +35,8 @@ A cada rodada o jogador deve jogar uma carta das suas quatro possibilidades, seu
 
 ## Configurações e ranking
 
-O jogo conta com alguns adicionais como personalização. É possível adicionar e remover perfis locais, usando web storage, com nomes e imagens de perfil entre as disponíveis, além de escolher entre temas personalizados e pré-definidos para o jogo. Além disso, o ranking mostra as melhores pontuações e os perfis que as fizeram.
+O jogo conta com alguns adicionais como personalização. É possível adicionar e remover perfis locais, usando web storage, com nomes e imagens de perfil entre as disponíveis. Além disso, o ranking mostra as melhores pontuações e os perfis que as fizeram.
 
-## Easter Egg
+## Sobre nós e easter eggs
 
-Em breve... (mas posso adiantar que vai ter a ver com o sobre nós 🤫)
-
-> Me segue no [insta](https://www.instagram.com/pedrogabrielb.vieira/) e no [github](https://github.com/pbarruetavena)
+A página sobre nós é uma roleta de cartas, com uma carta para o site e uma para cada criador. As cartas têm descrições e outras mensagens, além de um botão de like e links. Nessa página existem alguns easter eggs, como textos que mudam quando você dá like na carta e um minigame escondido.
