@@ -131,7 +131,6 @@ body {
     border-radius: 50px;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    font-size: 40px;
     border: 1px var(--cor-texto) solid;
     padding: 10px 15px;
 }
@@ -289,8 +288,6 @@ body {
 #quadro-bot {
     display: flex;
     flex-direction: column;
-    border-left: 3px var(--cor-texto) solid;
-    padding-left: 5px;
 }
 #quadro-jogador .linha-quadro {
     flex-direction: row-reverse;
@@ -305,4 +302,75 @@ body {
 
 .quadro-chave .linha-quadro img {
     height: 16px;
+}
+
+@media (min-width: 651px) {
+    #container-res .botao-final {
+        font-size: 40px;
+    }
+
+    #quadro-bot {
+        border-left: 3px var(--cor-texto) solid;
+        padding-left: 5px;
+    }
+    
+    #quadro-bot .linha-quadro {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 650px) {
+    #container-tela-jogo {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #container-dados-bot {
+        align-self: flex-end;
+    }
+    #quadro-bot {
+        order: -1;
+        border-right: 3px var(--cor-texto) solid;
+        padding-right: 5px;
+    }
+
+    #container-cartas-na-mesa {
+        height: 25vh;
+        width: 70vw;
+    }
+
+    #container-dados-jogador {
+        order: 5;
+        align-self: flex-end;
+    }
+
+    .carta {
+        height: 16vh;
+        width: 70px;
+    }
+
+    #container-cartas-jogador .mov-card-bot {
+        top: 41vh;
+        left: 22vw;
+    }
+
+    #container-cartas-bot .mov-card-bot {
+        top: 37vh;
+        left: 60vw;
+    }
+
+    #display-res {
+        font-size: 20px;
+    }
+    #container-botoes-final .botao-final {
+        font-size: 20px;
+        padding: 4px 7px;
+    }
+    #container-botoes-final i {
+        font-size: 20px !important;
+        padding: 5px 4px;
+    }
 }
