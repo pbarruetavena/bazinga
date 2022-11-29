@@ -100,7 +100,8 @@ function seleciona_perfil_config(e){
 
     document.querySelector('#input-nome').value = perfis[perfilAtual].nome;
     document.querySelector('#imagem-selecionada').src = 'imagens/' + perfis[perfilAtual].imagem;
-    posImagem = -1;
+    
+    posImagem = imagensDePerfil.indexOf(perfis[perfilAtual].imagem);
 }
 
 
